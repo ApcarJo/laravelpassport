@@ -71,7 +71,7 @@ class PostController extends Controller
     {
         $post = auth()->user()->posts()->find($id);
 
-        if (!post) {
+        if (!$post) {
             return response()->json([
                 'success' => false,
                 'message' => 'Post not found'
@@ -106,7 +106,7 @@ class PostController extends Controller
     {
         $post = auth()->user()->posts()->find($id);
 
-        if(!post) {
+        if(!$post) {
             return response()->json ([
                 'success' => false,
                 'message' => 'Post not found'
@@ -115,7 +115,7 @@ class PostController extends Controller
 
         $updated = $post->fill($request->all())->save();
 
-        if (!updated)
+        if ($updated)
         return response()->json([
             'success' => true
         ]);
