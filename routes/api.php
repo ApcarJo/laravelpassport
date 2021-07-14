@@ -23,4 +23,8 @@ Route::post('login', [PassportAuthController::class, 'login']);
 
 Route::middleware('auth:api')->group(function () {
     Route::resource('posts', PostController::class);
+    Route::resource('comments', CommentController::class);
+    Route::resource('party', PartyController::class);
+    Route::resource('subscriptions', SubscriptionController::class);
+    Route::resource('games', GamesController::class);
 });
