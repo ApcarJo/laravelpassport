@@ -157,8 +157,10 @@ class GameController extends Controller
             $game = Game::find($request->game_id);
             
             if ($game) {
-
-                $game->isActive = false;
+                
+                $updated = $game->update([
+                    'isActive' => false
+                ]);
 
                 return response()->json([
                     'success'=>true,
