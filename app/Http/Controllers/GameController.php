@@ -81,7 +81,7 @@ class GameController extends Controller
     {
         // $game = Game::where(Game->gameTitle, $request->gameTitle);
         $game = Game::where('gameTitle', '=', $request->gameTitle)->get();
-        if ($game) {
+        if (!$game->isEmpty()) {
             return response()->json([
                 'success' => true,
                 'data' => $game
