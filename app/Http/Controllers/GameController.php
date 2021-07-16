@@ -42,7 +42,7 @@ class GameController extends Controller
     {
         $user = auth()->user();
 
-        if ($user->isAdmin) {
+        if ($user->isAdmin==true) {
 
             $this->validate($request, [
                 'gameTitle' => 'required',
@@ -92,21 +92,21 @@ class GameController extends Controller
     {
         $user= auth()->user();
         
-        if ($user) {
+        // if ($user) {
 
-            $allGames = Game::find($game);
+        //     $allGames = Game::find($game);
 
-            return response()->json([
-                'success'=>true,
-                'data'=>$allGames,
-            ], 200);
+        //     return response()->json([
+        //         'success'=>true,
+        //         'data'=>$allGames,
+        //     ], 200);
 
-        } else {
-            return response()->json([
-                'success'=>false,
-                'message'=>'You need to log in'
-            ], 400);
-        }
+        // } else {
+        //     return response()->json([
+        //         'success'=>false,
+        //         'message'=>'You need to log in'
+        //     ], 400);
+        // }
     }
 
     /**
