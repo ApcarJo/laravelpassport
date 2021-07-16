@@ -38,11 +38,11 @@ class GameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function create(Request $request)
     {
-        $user = auth()->user();
+        // $user = auth()->user();
 
-        if ($user->isAdmin==true) {
+        // if ($user->isAdmin==true) {
 
             $this->validate($request, [
                 'gameTitle' => 'required',
@@ -68,7 +68,7 @@ class GameController extends Controller
                     'message' => 'Game not added'
                 ], 500);
             };
-        }
+        // }
     }
 
     /**
@@ -129,9 +129,9 @@ class GameController extends Controller
      */
     public function update(Request $request, Game $game)
     {
-        // $user= auth()->user();
+        $user= auth()->user();
 
-        // if ($user->isAdmin) {
+        if ($user->isAdmin) {
 
             $game = Game::find($request->id);
 
@@ -155,7 +155,7 @@ class GameController extends Controller
                     'message' => 'Game not found'
                 ], 400);
             }
-        // }
+        }
     }
 
     /**
