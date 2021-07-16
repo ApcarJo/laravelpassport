@@ -79,22 +79,12 @@ class GameController extends Controller
      */
     public function show(Request $request)
     {
-        $user = auth()->user();
+        $allGames = Game::find($request->gameTitle);
 
-        if ($user) {
-
-            $allGames = Game::find($game);
-
-            return response()->json([
-                'success' => true,
-                'data' => $allGames,
-            ], 200);
-        } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'You need to log in'
-            ], 400);
-        }
+        return response()->json([
+            'success' => true,
+            'data' => $allGames,
+        ], 200);
     }
 
     /**
