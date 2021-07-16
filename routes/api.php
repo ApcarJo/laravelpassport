@@ -4,6 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PassportAuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\PartyController;
+use App\Http\Controllers\CommentController;
 
 
 /*
@@ -26,9 +29,8 @@ Route::middleware('auth:api')->group(function () {
     Route::resource('comments', CommentController::class);
     Route::resource('party', PartyController::class);
     Route::resource('subscriptions', SubscriptionController::class);
-    // Route::resource('addgame', GameController::class);
     Route::post('addgame', [GameController::class, 'create']);
-    // Route::get('allgames', [GameController::class, 'index']);
-    // Route::delete('deletegame', [GameController::class, 'destroy']);
-    // Route::put('modifygame', [GameController::class, 'update']);
+    Route::get('allgames', [GameController::class, 'index']);
+    Route::delete('deletegame', [GameController::class, 'destroy']);
+    Route::put('modifygame', [GameController::class, 'update']);
 });
