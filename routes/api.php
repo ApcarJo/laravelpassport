@@ -29,7 +29,7 @@ Route::middleware('auth:api')->group(function () {
     Route::resource('comments', CommentController::class);
     Route::resource('party', PartyController::class);
     Route::resource('subscriptions', SubscriptionController::class);
-    // Route::post('addgame', [GameController::class, 'create']);
+    Route::post('findgame', [GameController::class, 'show']);
     Route::get('allgames', [GameController::class, 'index']);
     Route::delete('deletegame', [GameController::class, 'destroy']);
     Route::put('modifygame', [GameController::class, 'update']);

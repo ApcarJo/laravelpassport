@@ -14,23 +14,12 @@ class GameController extends Controller
      */
     public function index()
     {
-        $user= auth()->user();
-        
-        if ($user) {
+        $allGames = Game::all();
 
-            $allGames = Game::all();
-
-            return response()->json([
-                'success'=>true,
-                'data'=>$allGames,
-            ], 200);
-
-        } else {
-            return response()->json([
-                'success'=>false,
-                'message'=>'You need to log in'
-            ], 400);
-        }
+        return response()->json([
+            'success' => true,
+            'data' => $allGames,
+        ], 200);
     }
 
     /**
@@ -44,30 +33,30 @@ class GameController extends Controller
 
         // if ($user->isAdmin==true) {
 
-            $this->validate($request, [
-                'gameTitle' => 'required',
-                'thumbnail_url' => 'required',
-                'url' => 'required'
+        $this->validate($request, [
+            'gameTitle' => 'required',
+            'thumbnail_url' => 'required',
+            'url' => 'required'
 
+        ]);
+
+        $game = Game::create([
+            'gameTitle' => $request->gameTitle,
+            'thumbnail_url' => $request->thumbnail_url,
+            'url' => $request->url
+        ]);
+
+        if ($game) {
+            return response()->json([
+                'success' => true,
+                'data' => $game
             ]);
-
-            $game = Game::create([
-                'gameTitle' => $request->gameTitle,
-                'thumbnail_url' => $request->thumbnail_url,
-                'url' => $request->url
-            ]);
-
-            if ($game) {
-                return response()->json([
-                    'success' => true,
-                    'data' => $game
-                ]);
-            } else {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Game not added'
-                ], 500);
-            };
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Game not added'
+            ], 500);
+        };
         // }
     }
 
@@ -90,23 +79,22 @@ class GameController extends Controller
      */
     public function show(Request $request)
     {
-        $user= auth()->user();
-        
-        // if ($user) {
+        $user = auth()->user();
 
-        //     $allGames = Game::find($game);
+        if ($user) {
 
-        //     return response()->json([
-        //         'success'=>true,
-        //         'data'=>$allGames,
-        //     ], 200);
+            $allGames = Game::find($game);
 
-        // } else {
-        //     return response()->json([
-        //         'success'=>false,
-        //         'message'=>'You need to log in'
-        //     ], 400);
-        // }
+            return response()->json([
+                'success' => true,
+                'data' => $allGames,
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'You need to log in'
+            ], 400);
+        }
     }
 
     /**
@@ -129,7 +117,7 @@ class GameController extends Controller
      */
     public function update(Request $request, Game $game)
     {
-        $user= auth()->user();
+        $user = auth()->user();
 
         if ($user->isAdmin) {
 
@@ -166,36 +154,33 @@ class GameController extends Controller
      */
     public function destroy(Request $request)
     {
-        $user= auth()->user();
+        $user = auth()->user();
 
-        if ($user->isAdmin){
-            
+        if ($user->isAdmin) {
+
             $game = Game::find($request->game_id);
-            
+
             if ($game) {
-                
+
                 $game->update([
                     'isActive' => false
                 ]);
 
                 return response()->json([
-                    'success'=>true,
-                    'data'=>$game,
-                    'message'=> 'Game archived'
+                    'success' => true,
+                    'data' => $game,
+                    'message' => 'Game archived'
                 ], 200);
-
             } else {
                 return response()->json([
-                    'success'=>false,
-                    'message'=>'Game not found'
+                    'success' => false,
+                    'message' => 'Game not found'
                 ], 500);
             }
-
-
         } else {
             return response()->json([
-                'success'=>false,
-                'message'=> "You don't have permissions"
+                'success' => false,
+                'message' => "You don't have permissions"
             ], 400);
         }
     }
