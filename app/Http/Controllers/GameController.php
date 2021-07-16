@@ -158,7 +158,7 @@ class GameController extends Controller
             
             if ($game) {
                 
-                $updated = $game->update([
+                $game->update([
                     'isActive' => false
                 ]);
 
