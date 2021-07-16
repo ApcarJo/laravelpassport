@@ -79,11 +79,12 @@ class GameController extends Controller
      */
     public function show(Request $request)
     {
-        $game = Game::find($request->gameTitle);
+        // $game = Game::where(Game->gameTitle, $request->gameTitle);
+        $game = Game::where('gameTitle', '=', $request->gameTitle)->get();
         if ($game) {
             return response()->json([
                 'success' => true,
-                'data' => $game,
+                'data' => $game
             ], 200);
         } else {
             return response()->json([
