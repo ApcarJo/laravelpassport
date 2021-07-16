@@ -24,31 +24,8 @@ class CommentController extends Controller
      */
     public function create()
     {
-        $this->validate($request, [
-            'gameTitle'=>'required',
-            'thumbnail_url'=>'required',
-            'url'=>'required'
-
-        ]);
-
-        $game= Game::create([
-            'gameTitle'=>$request->gameTitle,
-            'thumbnail_url'=>$request->thumbnail_url,
-            'url'=>$request->url
-        ]);
-
-        if($game) {
-            return response()->json([
-                'success'=>true,
-                'data'=>$game
-            ]);
-        } else {
-            return response()->json([
-                'success'=>false,
-                'message'=>'Game not added'
-            ], 500);
-        }
-
+        //
+        
     }
 
     /**

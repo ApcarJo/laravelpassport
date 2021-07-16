@@ -18,6 +18,7 @@ class CreateGamesTable extends Migration
             $table->string("gameTitle");
             $table->string('thumbnail_url');
             $table->string('url');
+            $table->boolean('isActive')->default(true);
             $table->timestamps();
         });
     }

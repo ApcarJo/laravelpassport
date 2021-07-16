@@ -13,7 +13,12 @@ class Game extends Model
         'thumbnail_url',
         'url'
     ];
-    
+
+    protected $hidden = [
+        'isActive',
+        'dateDeleted'
+    ];
+
     public function party(){
         return $this->hasMany(Party::class);
     }
