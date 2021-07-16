@@ -129,9 +129,9 @@ class GameController extends Controller
      */
     public function update(Request $request, Game $game)
     {
-        $user = auth()->user();
+        // $user= auth()->user();
 
-        if ($user->isAdmin) {
+        // if ($user->isAdmin) {
 
             $game = Game::find($request->id);
 
@@ -155,7 +155,7 @@ class GameController extends Controller
                     'message' => 'Game not found'
                 ], 400);
             }
-        }
+        // }
     }
 
     /**
