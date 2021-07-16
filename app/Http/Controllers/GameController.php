@@ -79,12 +79,19 @@ class GameController extends Controller
      */
     public function show(Request $request)
     {
-        $allGames = Game::find($request->gameTitle);
 
-        return response()->json([
-            'success' => true,
-            'data' => $allGames,
-        ], 200);
+        $allGames = Game::find($request->gameTitle);
+        if ($allGames) {
+            return response()->json([
+                'success' => true,
+                'data' => $allGames,
+            ], 200);
+        } else {
+            return response()->json([
+                'success'=>false,
+                'message'=>'This game is not in our library'
+            ], 400);
+        }
     }
 
     /**
