@@ -95,6 +95,29 @@ class GameController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Game  $game
+     * @return \Illuminate\Http\Response
+     */
+    public function byId(Request $request)
+    {
+        // $game = Game::where(Game->gameTitle, $request->gameTitle);
+        $game = Game::where('id', '=', $request->game_id)->get();
+        if (!$game->isEmpty()) {
+            return response()->json([
+                'success' => true,
+                'data' => $game
+            ], 200);
+        } else {
+            return response()->json([
+                'success'=>false,
+                'message'=>'This game is not in our library'
+            ], 400);
+        }
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Game  $game

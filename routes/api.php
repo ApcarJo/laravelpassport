@@ -22,16 +22,19 @@ use App\Http\Controllers\CommentController;
 
 Route::post('register', [PassportAuthController::class, 'register']);
 Route::post('login', [PassportAuthController::class, 'login']);
-Route::post('addgame', [GameController::class, 'create']);
+
 
 
 Route::middleware('auth:api')->group(function () {
     Route::resource('posts', PostController::class);
+    // Route::post('userposts', [PostController::class, 'index']);
+    Route::post('addpost', [PostController::class, 'store']);
     Route::resource('comments', CommentController::class);
     Route::resource('party', PartyController::class);
     Route::resource('subscriptions', SubscriptionController::class);
-    
+    Route::post('addgame', [GameController::class, 'create']);
     Route::post('findgame', [GameController::class, 'show']);
+    Route::post('choosegame', [GameController::class, 'byid']);
     Route::get('allgames', [GameController::class, 'index']);
     Route::delete('deletegame', [GameController::class, 'destroy']);
     Route::put('modifygame', [GameController::class, 'update']);
