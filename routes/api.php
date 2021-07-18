@@ -33,6 +33,15 @@ Route::middleware('auth:api')->group(function () {
     Route::resource('party', PartyController::class);
     Route::resource('subscriptions', SubscriptionController::class);
 
+    Route::get('allusers', [UserController::class, 'index']);
+    // Route::post('finduser', [[UserController::class, 'byName']);
+    // Route::post('chooseuser', [[UserController::class, 'byId']);
+    // Route::get('activeusers', [[UserController::class, 'showActive']);
+    // Route::put('archiveuser', [[UserController::class, 'archive']);
+    // Route::delete('deleteuser', [[UserController::class, 'destroy']);
+    // Route::put('modifyuser', [[UserController::class, 'update']);
+
+    //GAME CONTROLLER
     Route::post('addgame', [GameController::class, 'create']);
     Route::post('findgame', [GameController::class, 'byName']);
     Route::post('choosegame', [GameController::class, 'byId']);

@@ -7,6 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Party extends Model
 {
+
+    protected $fillable = [
+        'partyName',
+        'game_id',
+        'userCreator'
+    ];
+
+    protected $hidden = [
+        'isActive',
+        
+    ];
+
     public function game(){
         return $this->belongsTo(Game::class);
     }
