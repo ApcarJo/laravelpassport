@@ -64,8 +64,31 @@ class UserController extends Controller
      */
     public function byName(Request $request)
     {
-        // $game = Game::where(Game->gameTitle, $request->gameTitle);
+        $user = User::where('userName', 'LIKE', '%'.$request->userName.'%')->get();
+        if (!$user->isEmpty()) {
+            return response()->json([
+                'success' => true,
+                'data' => $user
+            ], 200);
+        } else {
+            return response()->json([
+                'success'=>false,
+                'message'=>'This user does not exist'
+            ], 400);
+        }
+    }
+
+    /**
+     * Display the specified resource by name.
+     *
+     * @param  \App\Models\Game  $game
+     * @return \Illuminate\Http\Response
+     */
+    public function suserSelector(Request $request)
+    {
+
         $user = User::where('userName', '=', $request->userName)->get();
+
         if (!$user->isEmpty()) {
             return response()->json([
                 'success' => true,
@@ -150,7 +173,7 @@ class UserController extends Controller
     {
         $user = auth()->user();
 
-        if ($user->isAdmin) {
+        if (($user->isAdmin)||($user->id==$request->user_id)) {
 
             $deactive = User::find($request->user_id);
 
@@ -163,12 +186,51 @@ class UserController extends Controller
                 return response()->json([
                     'success' => true,
                     'data' => $deactive,
-                    'message' => 'Game deleted'
+                    'message' => 'User deleted'
                 ], 200);
             } else {
                 return response()->json([
                     'success' => false,
-                    'message' => 'Game not found'
+                    'message' => 'User not found'
+                ], 500);
+            }
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => "You don't have permissions"
+            ], 400);
+        }
+    }
+
+    /**
+     * Change isActive to true the specified user.
+     *
+     * @param  \App\Models\Game  $game
+     * @return \Illuminate\Http\Response
+     */
+    public function activate(Request $request)
+    {
+        $user = auth()->user();
+
+        if (($user->isAdmin)||($user->id==$request->user_id)) {
+
+            $activate = User::find($request->user_id);
+
+            if ($activate) {
+
+                $activate->isActive = 1;
+                $activate->save();
+
+
+                return response()->json([
+                    'success' => true,
+                    'data' => $activate,
+                    'message' => 'User activated'
+                ], 200);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'User not found'
                 ], 500);
             }
         } else {

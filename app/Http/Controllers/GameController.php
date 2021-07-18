@@ -29,35 +29,35 @@ class GameController extends Controller
      */
     public function create(Request $request)
     {
-        // $user = auth()->user();
+        $user = auth()->user();
 
-        // if ($user->isAdmin==true) {
+        if ($user->isAdmin == true) {
 
-        $this->validate($request, [
-            'gameTitle' => 'required',
-            'thumbnail_url' => 'required',
-            'url' => 'required'
+            $this->validate($request, [
+                'gameTitle' => 'required',
+                'thumbnail_url' => 'required',
+                'url' => 'required'
 
-        ]);
-
-        $game = Game::create([
-            'gameTitle' => $request->gameTitle,
-            'thumbnail_url' => $request->thumbnail_url,
-            'url' => $request->url
-        ]);
-
-        if ($game) {
-            return response()->json([
-                'success' => true,
-                'data' => $game
             ]);
-        } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'Game not added'
-            ], 500);
-        };
-        // }
+
+            $game = Game::create([
+                'gameTitle' => $request->gameTitle,
+                'thumbnail_url' => $request->thumbnail_url,
+                'url' => $request->url
+            ]);
+
+            if ($game) {
+                return response()->json([
+                    'success' => true,
+                    'data' => $game
+                ]);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Game not added'
+                ], 500);
+            };
+        }
     }
 
     /**
@@ -85,8 +85,34 @@ class GameController extends Controller
      */
     public function byName(Request $request)
     {
-        // $game = Game::where(Game->gameTitle, $request->gameTitle);
+        // This code can be more solid with a selector
+        // $game = Game::where('gameTitle', '=', $request->gameTitle)->get();
+
+        $game = Game::where('gameTitle', 'LIKE', '%' . $request->gameTitle . '%')->get();
+        if (!$game->isEmpty()) {
+            return response()->json([
+                'success' => true,
+                'data' => $game
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'This game is not in our library'
+            ], 400);
+        }
+    }
+
+    /**
+     * Display the specified resource by name.
+     *
+     * @param  \App\Models\Game  $game
+     * @return \Illuminate\Http\Response
+     */
+    public function gameSelector(Request $request)
+    {
+
         $game = Game::where('gameTitle', '=', $request->gameTitle)->get();
+
         if (!$game->isEmpty()) {
             return response()->json([
                 'success' => true,
@@ -221,18 +247,17 @@ class GameController extends Controller
                     'data' => $game,
                     'message' => 'Game deleted'
                 ], 200);
-                } else {
-                    return response()->json([
-                        'success' => false,
-                        'message' => 'Game not found'
-                    ], 500);
-                }
             } else {
                 return response()->json([
                     'success' => false,
-                    'message' => "You don't have permissions"
-                ], 400);
+                    'message' => 'Game not found'
+                ], 500);
             }
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => "You don't have permissions"
+            ], 400);
         }
     }
-?>
+}

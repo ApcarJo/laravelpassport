@@ -15,7 +15,7 @@ class CreateGamesTable extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->string("gameTitle");
+            $table->string("gameTitle")->unique();
             $table->string('thumbnail_url');
             $table->string('url');
             $table->boolean('isActive')->default(true);

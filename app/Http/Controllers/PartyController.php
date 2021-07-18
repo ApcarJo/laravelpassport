@@ -14,7 +14,22 @@ class PartyController extends Controller
      */
     public function index()
     {
-        //
+        $user = auth()->user();
+
+        if ($user) {
+
+            $allparties = Party::all();
+
+            return response()->json([
+                'success' => true,
+                'data' => $allparties,
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'You have no permissions'
+            ], 401);
+        }
     }
 
     /**
@@ -22,9 +37,40 @@ class PartyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $user = auth()->user();
+
+        if ($user) {
+            $this->validate($request, [
+                'partyName' => 'required',
+                'description' => 'required',
+                'imgurl' => 'required'
+            ]);
+
+            $party = Party::create([
+                'gameTitle' => $request->partyName,
+                'game_id' => $request->description,
+                'userCreateor' => $request->imgurl
+            ]);
+
+            if ($party) {
+                return response()->json([
+                    'success' => true,
+                    'data' => $party
+                ]);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Party not added'
+                ], 500);
+            };
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'You need to log in first'
+            ]);
+        }
     }
 
     /**

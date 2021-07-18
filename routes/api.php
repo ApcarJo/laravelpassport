@@ -31,12 +31,23 @@ Route::middleware('auth:api')->group(function () {
     // Route::post('userposts', [PostController::class, 'index']);
     Route::post('addpost', [PostController::class, 'store']);
     Route::resource('comments', CommentController::class);
-    Route::resource('party', PartyController::class);
     Route::resource('subscriptions', SubscriptionController::class);
+
+    //PARTY CONTROLLER
+    Route::post('createparty', [PartyController::class, 'create']);
+    Route::post('findparty', [PartyController::class, 'byName']);
+    Route::post('selectparty', [PartyController::class, 'partySelector']);
+    Route::post('chooseparty', [PartyController::class, 'byId']);
+    Route::get('allparties', [PartyController::class, 'index']);
+    Route::get('activeparties', [PartyController::class, 'showActive']);
+    Route::put('archiveparty', [PartyController::class, 'archive']);
+    Route::delete('deleteparty', [PartyController::class, 'destroy']);
+    Route::put('modifyparty', [PartyController::class, 'update']);
 
     //USER CONTROLLER
     Route::get('allusers', [UserController::class, 'index']);
     Route::post('finduser', [UserController::class, 'byName']);
+    Route::post('selectuser', [UserController::class, 'userSelector']);
     Route::post('chooseuser', [UserController::class, 'byId']);
     Route::get('activeusers', [UserController::class, 'showActive']);
     Route::put('archiveuser', [UserController::class, 'archive']);
@@ -46,6 +57,7 @@ Route::middleware('auth:api')->group(function () {
     //GAME CONTROLLER
     Route::post('addgame', [GameController::class, 'create']);
     Route::post('findgame', [GameController::class, 'byName']);
+    Route::post('selectgame', [GameController::class, 'gameSelector']);
     Route::post('choosegame', [GameController::class, 'byId']);
     Route::get('allgames', [GameController::class, 'index']);
     Route::get('activegames', [GameController::class, 'showActive']);
