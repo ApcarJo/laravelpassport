@@ -33,6 +33,38 @@ class PartyController extends Controller
     }
 
     /**
+     * Display all parties of a game.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function allGameParties(Request $request)
+    {
+        $user = auth()->user();
+
+        if ($user) {
+
+            $allParties = Party::where('game_id', '=', $request->game_id)->get();
+
+            if (!$allParties->isEmpty()) {
+                return response()->json([
+                    'success' => true,
+                    'data' => $allParties,
+                ], 200);
+            }else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'There is no parties of this game'
+                ], 500);
+            }
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'You have no permissions'
+            ], 401);
+        }
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
