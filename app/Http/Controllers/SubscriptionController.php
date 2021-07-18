@@ -9,17 +9,42 @@ use Illuminate\Http\Request;
 class SubscriptionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the user descriptions.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
         $user = auth()->user();
 
         if ($user) {
 
-            $allSubs= Subscription::where('user_id', '=', $request->user_id);
+            $allSubs= Subscription::where('user_id', '=', $user->id)->get();
+
+            return response()->json([
+                'success' => true,
+                'data' => $allSubs,
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'You have no permissions'
+            ], 401);
+        }
+    }
+
+    /**
+     * Display a listing of the all subscriptions.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function allsubs()
+    {
+        $user = auth()->user();
+
+        if ($user->isAdmin) {
+
+            $allSubs= Subscription::all()->groupBy('party_id');
 
             return response()->json([
                 'success' => true,

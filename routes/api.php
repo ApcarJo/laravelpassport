@@ -33,16 +33,10 @@ Route::middleware('auth:api')->group(function () {
     Route::post('addpost', [PostController::class, 'store']);
     Route::resource('comments', CommentController::class);
 
-    Route::resource('subscriptions', SubscriptionController::class);
     Route::post('createsubs', [SubscriptionController::class, 'create']);
-    Route::post('findsubs', [SubscriptionController::class, 'byName']);
-    Route::post('selectsubs', [SubscriptionController::class, 'partySelector']);
-    Route::post('choosesubs', [SubscriptionController::class, 'byId']);
-    Route::get('allsubs', [SubscriptionController::class, 'index']);
-    Route::get('activesubs', [SubscriptionController::class, 'showActive']);
-    Route::put('archivesubs', [SubscriptionController::class, 'archive']);
+    Route::get('choosesubs', [SubscriptionController::class, 'index']);
+    Route::get('allsubs', [SubscriptionController::class, 'allsubs']);
     Route::delete('deletesubs', [SubscriptionController::class, 'destroy']);
-    Route::put('modifysubs', [SubscriptionController::class, 'update']);
 
     //PARTY CONTROLLER
     Route::post('createparty', [PartyController::class, 'create']);
