@@ -17,7 +17,7 @@ class CreatePartiesTable extends Migration
             $table->id();
             $table->string("partyTitle", 25);
             $table->foreignId('game_id')->references('id')->on('games');
-            $table->foreignId('owner_id')->references('id')->on('players');
+            $table->foreignId('owner_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

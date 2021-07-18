@@ -17,7 +17,7 @@ class CreateSubscriptionsTable extends Migration
             $table->id();
             $table->date("dateJoin");
             $table->foreignId('party_id')->references('id')->on('parties');
-            $table->foreignId('player_id')->references('id')->on('players');
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

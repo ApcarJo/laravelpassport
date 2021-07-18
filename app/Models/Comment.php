@@ -12,7 +12,7 @@ class Comment extends Model
         return $this->belongsTo(Party::class);
     }
 
-    public function player(){
+    public function user(){
         return $this->belongsTo(User::class);
     }
 

@@ -18,7 +18,7 @@ class CreateCommentsTable extends Migration
             $table->text("text");
             $table->date("dateCreated");
             $table->foreignId('party_id')->references('id')->on('parties');
-            $table->foreignId('player_id')->references('id')->on('players');
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

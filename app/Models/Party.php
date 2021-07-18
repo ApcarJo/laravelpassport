@@ -19,7 +19,7 @@ class Party extends Model
         return $this->hasMany(Subscription::class);
     }
 
-    public function player(){
+    public function user(){
         return $this->belongsTo(User::class);
     }
 
