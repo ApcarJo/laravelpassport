@@ -11,6 +11,19 @@ use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
+
+    public function subscription(){
+        return $this->hasMany(Subscription::class);
+    }
+
+    public function comment(){
+        return $this->hasMany(Comment::class);
+    }
+
+    public function party(){
+        return $this->hasMany(Party::class);
+    }
+
     use HasFactory, Notifiable, HasApiTokens;
 
     /**

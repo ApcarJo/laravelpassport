@@ -20,7 +20,7 @@ class Party extends Model
     }
 
     public function player(){
-        return $this->belongsTo(Player::class);
+        return $this->belongsTo(User::class);
     }
 
     use HasFactory;

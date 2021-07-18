@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class GameController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display all listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -23,7 +23,7 @@ class GameController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Create a new resource giving the proper data info.
      *
      * @return \Illuminate\Http\Response
      */
@@ -61,23 +61,29 @@ class GameController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display the active resources from the table.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
+    public function showActive(Request $request)
+    {
+        //
+        $allGames = Game::where('isActive', 1)->get();
+
+        return response()->json([
+            'success' => true,
+            'data' => $allGames,
+        ], 200);
+    }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource by name.
      *
      * @param  \App\Models\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function byName(Request $request)
     {
         // $game = Game::where(Game->gameTitle, $request->gameTitle);
         $game = Game::where('gameTitle', '=', $request->gameTitle)->get();
@@ -95,7 +101,7 @@ class GameController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource by id.
      *
      * @param  \App\Models\Game  $game
      * @return \Illuminate\Http\Response
@@ -118,17 +124,6 @@ class GameController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Game  $game
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Game $game)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -141,7 +136,7 @@ class GameController extends Controller
 
         if ($user->isAdmin) {
 
-            $game = Game::find($request->id);
+            $game = Game::find($request->game_id);
 
             if ($game) {
 
@@ -167,6 +162,45 @@ class GameController extends Controller
     }
 
     /**
+     * Archive the specified resource from storage.
+     *
+     * @param  \App\Models\Game  $game
+     * @return \Illuminate\Http\Response
+     */
+    public function archive(Request $request)
+    {
+        $user = auth()->user();
+
+        if ($user->isAdmin) {
+
+            $game = Game::find($request->game_id);
+
+            if ($game) {
+
+                $game->isActive = 0;
+                $game->save();
+
+
+                return response()->json([
+                    'success' => true,
+                    'data' => $game,
+                    'message' => 'Game deleted'
+                ], 200);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Game not found'
+                ], 500);
+            }
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => "You don't have permissions"
+            ], 400);
+        }
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Game  $game
@@ -178,18 +212,14 @@ class GameController extends Controller
 
         if ($user->isAdmin) {
 
-            $game = Game::find($request->game_id);
+            $game = Game::find($request->game_id)->delete();
 
             if ($game) {
-
-                $game->update([
-                    'isActive' => false
-                ]);
 
                 return response()->json([
                     'success' => true,
                     'data' => $game,
-                    'message' => 'Game archived'
+                    'message' => 'Game deleted'
                 ], 200);
             } else {
                 return response()->json([
