@@ -15,7 +15,22 @@ class SubscriptionController extends Controller
      */
     public function index(Request $request)
     {
-        
+        $user = auth()->user();
+
+        if ($user) {
+
+            $allSubs= Subscription::where('user_id', '=', $request->user_id);
+
+            return response()->json([
+                'success' => true,
+                'data' => $allSubs,
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'You have no permissions'
+            ], 401);
+        }
     }
 
     /**
@@ -27,9 +42,9 @@ class SubscriptionController extends Controller
     {
         $user = auth()->user();
 
-        $duplicate = Subscription::where('user_id', "=", $user->id)->where('party_id', '=', $request->party_id)->get();
+        $duplicate = Subscription::where('user_id', "=", $request->user_id)->where('party_id', '=', $request->party_id)->get();
 
-        if (($user)&&($duplicate->isEmpty())) {
+        if ((($user->isAdmin)||($user->id==$request->user_id))&&($duplicate->isEmpty())) {
             $this->validate($request, [
                 'party_id' => 'required',
                 'user_id' => 'required'
@@ -37,7 +52,7 @@ class SubscriptionController extends Controller
 
             $subscription = Subscription::create([
                 'party_id' => $request->party_id,
-                'user_id' => $user->id
+                'user_id' => $request->user_id
             ]);
 
             if ($subscription) {
@@ -54,7 +69,7 @@ class SubscriptionController extends Controller
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'You need to log in first'
+                'message' => 'You need to log in first or you are already in the party'
             ]);
         }
     }
