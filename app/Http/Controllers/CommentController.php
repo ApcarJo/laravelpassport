@@ -22,9 +22,41 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $user = auth()->user();
+
+        if ($user->id==$request->user_id) {
+
+            $this->validate($request, [
+                'message' => 'required',
+                'sub_id' => 'required',
+                'user_id' => 'required'
+            ]);
+
+            $comment = Comment::create([
+                'message' => $request->message,
+                'sub_id' => $request->sub_id,
+                'user_id' => $user->id
+            ]);
+
+            if ($comment) {
+                return response()->json([
+                    'success' => true,
+                    'data' => $comment
+                ]);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Party not added'
+                ], 500);
+            };
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'You need to log in first'
+            ]);
+        }
         
     }
 
@@ -79,8 +111,32 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy(Request $request)
     {
-        //
+        $user = auth()->user();
+
+        if ($user->id==$request->user_id) {
+
+            $comment = Comment::find($request->comment_id)->delete();
+
+            if ($comment) {
+
+                return response()->json([
+                    'success' => true,
+                    'data' => $comment,
+                    'message' => 'Message deleted'
+                ], 200);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Party not found'
+                ], 500);
+            }
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => "You don't have permissions"
+            ], 400);
+        }
     }
 }

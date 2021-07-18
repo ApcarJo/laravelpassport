@@ -33,7 +33,7 @@ class PartyController extends Controller
     }
 
     /**
-     * Display all parties of a game.
+     * Display all parties of a specific game.
      *
      * @return \Illuminate\Http\Response
      */
@@ -285,6 +285,7 @@ class PartyController extends Controller
                     'data' => $party,
                     'message' => 'Party deleted'
                 ], 200);
+
             } else {
                 return response()->json([
                     'success' => false,
@@ -299,4 +300,5 @@ class PartyController extends Controller
         }
     }
 }
+
 ?>
