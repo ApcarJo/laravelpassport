@@ -15,7 +15,7 @@ class UserController extends Controller
     public function index()
     {
         $user = auth()->user();
-        
+
         if ($user->isAdmin) {
 
             $allUsers = User::all();
@@ -34,14 +34,49 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display the specified resource by id.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function byId(Request $request)
     {
-        //
+        // $game = Game::where(Game->gameTitle, $request->gameTitle);
+        $user = User::where('id', '=', $request->user_id)->get();
+        if (!$user->isEmpty()) {
+            return response()->json([
+                'success' => true,
+                'data' => $user
+            ], 200);
+        } else {
+            return response()->json([
+                'success'=>false,
+                'message'=>'User not found'
+            ], 400);
+        }
+    }
+
+    /**
+     * Display the specified resource by name.
+     *
+     * @param  \App\Models\Game  $game
+     * @return \Illuminate\Http\Response
+     */
+    public function byName(Request $request)
+    {
+        // $game = Game::where(Game->gameTitle, $request->gameTitle);
+        $user = User::where('userName', '=', $request->userName)->get();
+        if (!$user->isEmpty()) {
+            return response()->json([
+                'success' => true,
+                'data' => $user
+            ], 200);
+        } else {
+            return response()->json([
+                'success'=>false,
+                'message'=>'This user does not exist'
+            ], 400);
+        }
     }
 
     /**
@@ -72,6 +107,44 @@ class UserController extends Controller
         //
     }
 
+    /**
+     * Archive the specified resource from storage.
+     *
+     * @param  \App\Models\Game  $game
+     * @return \Illuminate\Http\Response
+     */
+    public function archive(Request $request)
+    {
+        $user = auth()->user();
+
+        if ($user->isAdmin) {
+
+            $deactive = User::find($request->user_id);
+
+            if ($deactive) {
+
+                $deactive->isActive = 0;
+                $deactive->save();
+
+
+                return response()->json([
+                    'success' => true,
+                    'data' => $deactive,
+                    'message' => 'Game deleted'
+                ], 200);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Game not found'
+                ], 500);
+            }
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => "You don't have permissions"
+            ], 400);
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *
