@@ -73,17 +73,6 @@ class PartyController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  \App\Models\Party  $party
@@ -116,12 +105,12 @@ class PartyController extends Controller
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'This game is not in our library'
+                'message' => 'This party does not exist'
             ], 400);
         }
     }
 
-     /**
+    /**
      * Display the specified resource by name.
      *
      * @param  \App\Models\Party  $party
@@ -139,20 +128,31 @@ class PartyController extends Controller
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'This game is not in our library'
+                'message' => 'This party does not exist'
             ], 400);
         }
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Display the specified resource by id.
      *
      * @param  \App\Models\Party  $party
      * @return \Illuminate\Http\Response
      */
-    public function edit(Party $party)
+    public function byId(Request $request)
     {
-        //
+        $party = Party::where('id', '=', $request->party_id)->get();
+        if (!$party->isEmpty()) {
+            return response()->json([
+                'success' => true,
+                'data' => $party
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'This game is not in our library'
+            ], 400);
+        }
     }
 
     /**
@@ -164,7 +164,72 @@ class PartyController extends Controller
      */
     public function update(Request $request, Party $party)
     {
-        //
+        $user = auth()->user();
+
+        if ($user->isAdmin) {
+
+            $party = Party::find($request->party_id);
+
+            if ($party) {
+
+                $update = $party->fill($request->all())->save();
+
+                if ($update) {
+                    return response()->json([
+                        'success' => true
+                    ], 200);
+                } else {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'Game not updated'
+                    ], 400);
+                }
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Game not found'
+                ], 400);
+            }
+        }
+    }
+
+    /**
+     * Archive the specified resource from storage.
+     *
+     * @param  \App\Models\Party  $party
+     * @return \Illuminate\Http\Response
+     */
+    public function archive(Request $request)
+    {
+        $user = auth()->user();
+
+        if ($user->isAdmin) {
+
+            $party = Party::find($request->party_id);
+
+            if ($party) {
+
+                $party->isActive = 0;
+                $party->save();
+
+
+                return response()->json([
+                    'success' => true,
+                    'data' => $party,
+                    'message' => 'Party deleted'
+                ], 200);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Party not found'
+                ], 500);
+            }
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => "You don't have permissions"
+            ], 400);
+        }
     }
 
     /**
@@ -173,8 +238,32 @@ class PartyController extends Controller
      * @param  \App\Models\Party  $party
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Party $party)
+    public function destroy(Request $request)
     {
-        //
+        $user = auth()->user();
+
+        if ($user->isAdmin) {
+
+            $party = Party::find($request->party_id)->delete();
+
+            if ($party) {
+
+                return response()->json([
+                    'success' => true,
+                    'data' => $party,
+                    'message' => 'Party deleted'
+                ], 200);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Party not found'
+                ], 500);
+            }
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => "You don't have permissions"
+            ], 400);
+        }
     }
 }

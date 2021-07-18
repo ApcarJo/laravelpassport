@@ -15,7 +15,6 @@ class CreateSubscriptionsTable extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->date("dateJoin");
             $table->foreignId('party_id')->references('id')->on('parties');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();

@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Subscription extends Model
 {
 
+    protected $fillable = [
+        'party_id',
+        'user_id'
+    ];
+
     public function party(){
         return $this->belongsTo(Party::class);
     }

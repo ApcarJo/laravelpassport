@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Subscription;
+use App\Models\Party;
 use Illuminate\Http\Request;
 
 class SubscriptionController extends Controller
@@ -12,9 +13,9 @@ class SubscriptionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -22,9 +23,40 @@ class SubscriptionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $user = auth()->user();
+
+        $duplicate = Subscription::where('user_id', "=", $user->id)->where('party_id', '=', $request->party_id)->get();
+
+        if (($user)&&($duplicate->isEmpty())) {
+            $this->validate($request, [
+                'party_id' => 'required',
+                'user_id' => 'required'
+            ]);
+
+            $subscription = Subscription::create([
+                'party_id' => $request->party_id,
+                'user_id' => $user->id
+            ]);
+
+            if ($subscription) {
+                return response()->json([
+                    'success' => true,
+                    'data' => $subscription
+                ]);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'You cannot join to the party'
+                ], 500);
+            };
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'You need to log in first'
+            ]);
+        }
     }
 
     /**

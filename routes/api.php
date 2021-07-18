@@ -8,6 +8,7 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\PartyController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SubscriptionController;
 
 
 /*
@@ -31,7 +32,17 @@ Route::middleware('auth:api')->group(function () {
     // Route::post('userposts', [PostController::class, 'index']);
     Route::post('addpost', [PostController::class, 'store']);
     Route::resource('comments', CommentController::class);
+
     Route::resource('subscriptions', SubscriptionController::class);
+    Route::post('createsubs', [SubscriptionController::class, 'create']);
+    Route::post('findsubs', [SubscriptionController::class, 'byName']);
+    Route::post('selectsubs', [SubscriptionController::class, 'partySelector']);
+    Route::post('choosesubs', [SubscriptionController::class, 'byId']);
+    Route::get('allsubs', [SubscriptionController::class, 'index']);
+    Route::get('activesubs', [SubscriptionController::class, 'showActive']);
+    Route::put('archivesubs', [SubscriptionController::class, 'archive']);
+    Route::delete('deletesubs', [SubscriptionController::class, 'destroy']);
+    Route::put('modifysubs', [SubscriptionController::class, 'update']);
 
     //PARTY CONTROLLER
     Route::post('createparty', [PartyController::class, 'create']);
