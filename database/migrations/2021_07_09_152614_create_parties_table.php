@@ -15,9 +15,10 @@ class CreatePartiesTable extends Migration
     {
         Schema::create('parties', function (Blueprint $table) {
             $table->id();
-            $table->string("partyTitle", 25);
+            $table->string("partyName", 25)->unique();
             $table->foreignId('game_id')->references('id')->on('games');
             $table->foreignId('owner_id')->references('id')->on('users');
+            $table->boolean('isActive')->default(true);
             $table->timestamps();
         });
     }

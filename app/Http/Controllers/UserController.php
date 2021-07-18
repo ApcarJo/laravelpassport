@@ -36,12 +36,11 @@ class UserController extends Controller
     /**
      * Display the specified resource by id.
      *
-     * @param  \App\Models\Game  $game
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function byId(Request $request)
     {
-        // $game = Game::where(Game->gameTitle, $request->gameTitle);
         $user = User::where('id', '=', $request->user_id)->get();
         if (!$user->isEmpty()) {
             return response()->json([
@@ -59,7 +58,7 @@ class UserController extends Controller
     /**
      * Display the specified resource by name.
      *
-     * @param  \App\Models\Game  $game
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function byName(Request $request)
@@ -81,10 +80,10 @@ class UserController extends Controller
     /**
      * Display the specified resource by name.
      *
-     * @param  \App\Models\Game  $game
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function suserSelector(Request $request)
+    public function userSelector(Request $request)
     {
 
         $user = User::where('userName', '=', $request->userName)->get();
@@ -166,7 +165,7 @@ class UserController extends Controller
     /**
      * Archive the specified resource from storage.
      *
-     * @param  \App\Models\Game  $game
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function archive(Request $request)
@@ -205,7 +204,7 @@ class UserController extends Controller
     /**
      * Change isActive to true the specified user.
      *
-     * @param  \App\Models\Game  $game
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function activate(Request $request)

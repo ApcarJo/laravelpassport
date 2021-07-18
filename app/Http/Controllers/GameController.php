@@ -66,9 +66,8 @@ class GameController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function showActive(Request $request)
+    public function showActive()
     {
-        //
         $allGames = Game::where('isActive', 1)->get();
 
         return response()->json([
@@ -85,9 +84,6 @@ class GameController extends Controller
      */
     public function byName(Request $request)
     {
-        // This code can be more solid with a selector
-        // $game = Game::where('gameTitle', '=', $request->gameTitle)->get();
-
         $game = Game::where('gameTitle', 'LIKE', '%' . $request->gameTitle . '%')->get();
         if (!$game->isEmpty()) {
             return response()->json([

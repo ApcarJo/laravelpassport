@@ -44,14 +44,13 @@ class PartyController extends Controller
         if ($user) {
             $this->validate($request, [
                 'partyName' => 'required',
-                'description' => 'required',
-                'imgurl' => 'required'
+                'game_id' => 'required'
             ]);
 
             $party = Party::create([
-                'gameTitle' => $request->partyName,
-                'game_id' => $request->description,
-                'userCreateor' => $request->imgurl
+                'partyName' => $request->partyName,
+                'game_id' => $request->game_id,
+                'owner_id' => $user->id
             ]);
 
             if ($party) {
@@ -90,9 +89,59 @@ class PartyController extends Controller
      * @param  \App\Models\Party  $party
      * @return \Illuminate\Http\Response
      */
-    public function show(Party $party)
+    public function showActive()
     {
-        //
+        $allParties = Party::where('isActive', 1)->get();
+
+        return response()->json([
+            'success' => true,
+            'data' => $allParties,
+        ], 200);
+    }
+
+    /**
+     * Display the specified resource by name.
+     *
+     * @param  \App\Models\Party  $party
+     * @return \Illuminate\Http\Response
+     */
+    public function byName(Request $request)
+    {
+        $party = Party::where('partyName', 'LIKE', '%' . $request->partyName . '%')->get();
+        if (!$party->isEmpty()) {
+            return response()->json([
+                'success' => true,
+                'data' => $party
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'This game is not in our library'
+            ], 400);
+        }
+    }
+
+     /**
+     * Display the specified resource by name.
+     *
+     * @param  \App\Models\Party  $party
+     * @return \Illuminate\Http\Response
+     */
+    public function partySelector(Request $request)
+    {
+        $party = Party::where('partyName', '=', $request->partyName)->get();
+
+        if (!$party->isEmpty()) {
+            return response()->json([
+                'success' => true,
+                'data' => $party
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'This game is not in our library'
+            ], 400);
+        }
     }
 
     /**

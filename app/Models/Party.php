@@ -11,12 +11,11 @@ class Party extends Model
     protected $fillable = [
         'partyName',
         'game_id',
-        'userCreator'
+        'owner_id'
     ];
 
     protected $hidden = [
-        'isActive',
-        
+        'isActive'        
     ];
 
     public function game(){
