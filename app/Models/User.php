@@ -34,7 +34,10 @@ class User extends Authenticatable
     protected $fillable = [
         'userName',
         'email',
-        'password',
+        'steamId',
+        'epicId',
+        'blizzardId',
+        'password'
     ];
 
     /**

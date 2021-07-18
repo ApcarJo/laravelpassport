@@ -102,9 +102,42 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
-        //
+        $user = auth()->user();
+
+        if (($user->isAdmin)||($user->id==$request->user_id)) {
+
+            $modifyuser = User::find($request->user_id);
+
+            if ($modifyuser) {
+
+                // $update = $modifyuser->fill($request->all())->save();
+                $update = $modifyuser->fill([
+                    'steamId'=>$request->steam_id,
+                    'blizzardId'=>$request->blizzard_id,
+                    'epicId'=>$request->epic_id,
+                    'password'=>bcrypt($request->password)
+                ])->save();
+
+                if ($update) {
+                    return response()->json([
+                        'success' => true,
+                        'data' => $modifyuser
+                    ], 200);
+                } else {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'User not updated'
+                    ], 400);
+                }
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'User not found'
+                ], 400);
+            }
+        }
     }
 
     /**
@@ -151,8 +184,32 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Request $request)
     {
-        //
+        $user = auth()->user();
+
+        if ($user->isAdmin) {
+
+            $deleteuser = User::find($request->user_id)->delete();
+
+            if ($deleteuser) {
+                return response()->json([
+                    'success' => true,
+                    'data' => $deleteuser,
+                    'message' => 'User deleted'
+                ], 200);
+                } else {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'User not found'
+                    ], 500);
+                }
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => "You don't have permissions"
+                ], 400);
+            }
+        }
     }
-}
+?>

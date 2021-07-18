@@ -94,8 +94,8 @@ class GameController extends Controller
             ], 200);
         } else {
             return response()->json([
-                'success'=>false,
-                'message'=>'This game is not in our library'
+                'success' => false,
+                'message' => 'This game is not in our library'
             ], 400);
         }
     }
@@ -117,8 +117,8 @@ class GameController extends Controller
             ], 200);
         } else {
             return response()->json([
-                'success'=>false,
-                'message'=>'This game is not in our library'
+                'success' => false,
+                'message' => 'This game is not in our library'
             ], 400);
         }
     }
@@ -221,17 +221,18 @@ class GameController extends Controller
                     'data' => $game,
                     'message' => 'Game deleted'
                 ], 200);
+                } else {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'Game not found'
+                    ], 500);
+                }
             } else {
                 return response()->json([
                     'success' => false,
-                    'message' => 'Game not found'
-                ], 500);
+                    'message' => "You don't have permissions"
+                ], 400);
             }
-        } else {
-            return response()->json([
-                'success' => false,
-                'message' => "You don't have permissions"
-            ], 400);
         }
     }
-}
+?>

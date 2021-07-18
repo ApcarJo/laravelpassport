@@ -16,9 +16,9 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('userName');
-            $table->string('steamId')->default('your steamid');
-            $table->string('blizzardId')->default('your steamid');
-            $table->string('epicId')->default('your steamid');
+            $table->string('steamId')->default('your steam id');
+            $table->string('blizzardId')->default('your blizzard id');
+            $table->string('epicId')->default('your epic id');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
