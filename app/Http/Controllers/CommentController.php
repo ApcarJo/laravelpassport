@@ -68,7 +68,7 @@ class CommentController extends Controller
         $user = auth()->user();
         $sub = Subscription::where('party_id', '=', $request->party_id)->where('user_id', '=', $user->id)->get();
 
-        if (($user)&&($sub)) {
+        if (($user)&&(!$sub->isEmpty())) {
 
             $this->validate($request, [
                 'message' => 'required',
