@@ -34,22 +34,39 @@ Due date: July 18th 2021.
 <a name="instructions"></a> 
 ## Instructions :clipboard: 
 
-The first step is to clone the repository and install the project dependencies.
+The first step is to clone the repository:
+
+https://github.com/ApcarJo/laravelpassport
+
 ###To run the backend in local host:
-Copy .env.example file on root directory and just change the name to .env:
- `php composer install`
- `php artisan migrate`
- `php artisan passport:install`
+Copy .env.example file on root directory and just change the name to .env and follow the next instruccions on terminal:
+```
+ php composer install
+ php artisan migrate
+ php artisan passport:install
+ ```
 
 Run the server
 `php artisan serve`
 
-###To run the backend from Heroku Deploy:
-Copy .env.example file on root directory and configure the data to interact with Heroku:
+### To run the backend from Heroku Deploy:
+Copy .env.example file on root directory, rename to .env and configure the data to do the setup:
+````
+DB_CONNECTION=mysql
+DB_HOST=j5zntocs2dn6c3fj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com
+DB_PORT=3306
+DB_DATABASE=g0eaoixcaoz69iv8
+DB_USERNAME=mkai32kbppd0ftsq
+DB_PASSWORD=dctwaaw895z4g2t4`
+````
 
- `php composer install`
- `php artisan migrate`
- `php artisan passport:install`
+Install dependencies
+
+```
+ php composer install
+ php artisan migrate
+ php artisan passport:install
+ ```
 
 
 
@@ -65,42 +82,10 @@ This app uses themoviedatabase api to get the data needed for the webapp https:/
 <a name="images"></a>
 ## Screenshots 📸
 
-Home
+Database Diagram
 
-<img src="src/img/screenshots/home.jpg" width="1000">
+<img src="resources/img/diagram.jpg" width="1000">
 
-Login
-
-<img src="src/img/screenshots/login.jpg" width="1000">
-
-Customer profile
-
-<img src="src/img/screenshots/modifyProfile.jpg" width="1000">
-<img src="src/img/screenshots/modifyProfile2.jpg" width="1000">
-
-Create new order using my own datePicker improved since the last project. (https://github.com/ApcarJo/Frontend-Dental-Clinic)
-
-<img src="src/img/screenshots/datePicker.jpg" width="1000">
-
-Pick your movie, select date and rent.
-
-<img src="src/img/screenshots/convertDate_Example2.jpg" width="300"><img src="src/img/screenshots/convertDate_Example.jpg" width="300">
-
-Used own code as "moment" library to convert date types variables to a more comfort type.
-
-<img src="src/img/screenshots/convertDate.jpg" width="500">
-
-Admin role can check all history orders. I had not time to implement my schedule code https://github.com/ApcarJo/Frontend-Dental-Clinic where you can check in a calendar frame the results.
-
-<img src="src/img/screenshots/admin_orders.jpg" width="1000">
-
-Check your appointments history
-
-<img src="src/img/screenshots/genres.jpg" width="1000">
-
-Search input will show you the results in the top of your view
-
-<img src="src/img/screenshots/searchresults.jpg" width="1000">
 
 <a name="tools"></a>
 ## Tools 🔧
@@ -108,7 +93,7 @@ Search input will show you the results in the top of your view
 
 <img src="src/img/javascript.png" width="50"> <img src="src/img/html5.png" width="50"> <img src="src/img/css3.png" width="50"> <img src="src/img/react.png" width="50"> <img src="src/img/redux.png" width="55"> <img src="src/img/node.png" width="65"> <img src="src/img/trello.png" width="60">
 
-Installed dependencies: Redux, React-redux, Redux-localstorage-simple, Nodemon, React-Router-Dom & Axios.
+
 
 <a name="developers"></a>
 
@@ -123,19 +108,9 @@ Installed dependencies: Redux, React-redux, Redux-localstorage-simple, Nodemon, 
 Thanks to all our classmates for the help and work as a great team.
 
 Things runned out of time to implement:
-- Better design of the content scroll
-- Gradient on scroll
-- Price and costs calculation of the rents
-- Error when register allow you to create an account without a match with repeat password
-- Responsive design
-- Movies by actor, I have failed the endpoint, only actor info with some "known for" movies, so I removed of the search option.
-- To be able to hide the "movie card rent" when you see homescreen first time
-- Heroku deployment
+- Report comments
+- 
 
-Things I am proud of
-- The modify system
-- The show and hide of the datePicker when you are going to rent a movie
-- The functionality of the movies content carrousel where you can navigate all the pages the moviedatabase api can offer
 
 
 [🔝](#top)

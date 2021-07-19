@@ -20,9 +20,9 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
-    public function party(){
-        return $this->hasMany(Party::class);
-    }
+    // public function party(){
+    //     return $this->hasMany(Party::class);
+    // }
 
     use HasFactory, Notifiable, HasApiTokens;
 
@@ -60,9 +60,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function posts()
-    {
-        return $this->hasMany(Post::class);
-    }
 }
