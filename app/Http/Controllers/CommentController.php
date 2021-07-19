@@ -26,17 +26,16 @@ class CommentController extends Controller
     {
         $user = auth()->user();
 
-        if ($user->id==$request->user_id) {
+        if ($user) {
 
             $this->validate($request, [
                 'message' => 'required',
-                'sub_id' => 'required',
-                'user_id' => 'required'
+                'party_id' => 'required'
             ]);
 
             $comment = Comment::create([
                 'message' => $request->message,
-                'sub_id' => $request->sub_id,
+                'party_id' => $request->party_id,
                 'user_id' => $user->id
             ]);
 
@@ -100,9 +99,35 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comment $comment)
+    public function update(Request $request)
     {
-        //
+        $user = auth()->user();
+
+        if ($user->isAdmin) {
+
+            $comment = Comment::find($request->comment_id);
+
+            if ($comment) {
+
+                $update = $comment->fill($request->all())->save();
+
+                if ($update) {
+                    return response()->json([
+                        'success' => true
+                    ], 200);
+                } else {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'Game not updated'
+                    ], 400);
+                }
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Game not found'
+                ], 400);
+            }
+        }
     }
 
     /**
@@ -117,7 +142,7 @@ class CommentController extends Controller
 
         if ($user->id==$request->user_id) {
 
-            $comment = Comment::find($request->comment_id)->delete();
+            $comment = Comment::where('id', '=', $request->comment_id)->where('party_id', '=', $request->party_id)->delete();
 
             if ($comment) {
 

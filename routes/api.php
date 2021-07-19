@@ -28,7 +28,13 @@ Route::post('login', [PassportAuthController::class, 'login']);
 
 
 Route::middleware('auth:api')->group(function () {
-    Route::resource('comments', CommentController::class);
+
+    //COMMENT CONTROLLER
+    Route::post('createcomment', [CommentController::class, 'create']);
+    Route::get('partycomments', [CommentController::class, 'index']);
+    Route::get('allcomments', [CommentController::class, 'allComments']);
+    Route::put('modifycomment', [CommentController::class, 'update']);
+    Route::delete('deletecomment', [CommentController::class, 'destroy']);
 
     //SUBSCRIPTION CONTROLLER
     Route::post('createsubs', [SubscriptionController::class, 'create']);

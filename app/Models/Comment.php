@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
+    protected $fillable = [
+        'message',
+        'party_id',
+        'user_id'
+    ];
 
     public function party(){
         return $this->belongsTo(Party::class);
