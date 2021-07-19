@@ -1,62 +1,141 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<a name="top"></a>
 
-## About Laravel
+<h1 align="center">
+  <br> Game Chat Backend
+</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [About](#about)   
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- [Instructions](#instructions)
 
-## Learning Laravel
+- [Screenshots](#images)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- [Tools](#tools)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- [Developers](#developers)
 
-## Laravel Sponsors
+---
+<a name="about"></a>
+## About :speech_balloon:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Challenge from the Fullstack Developer Bootcamp at <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a> where it's requested a backend api rest about a game chat app.
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+This Project has been done by [José Luis Aparicio](https://github.com/ApcarJo).
 
-## Contributing
+Starting date: July 12th 2021. <br>
+Due date: July 18th 2021.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<a name="instructions"></a> 
+## Instructions :clipboard: 
 
-## Code of Conduct
+The first step is to clone the repository and install the project dependencies.
+###To run the backend in local host:
+Copy .env.example file on root directory and just change the name to .env:
+ `php composer install`
+ `php artisan migrate`
+ `php artisan passport:install`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Run the server
+`php artisan serve`
 
-## Security Vulnerabilities
+###To run the backend from Heroku Deploy:
+Copy .env.example file on root directory and configure the data to interact with Heroku:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+ `php composer install`
+ `php artisan migrate`
+ `php artisan passport:install`
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+<br>
+
+On the other side, you will need to clone the backend from https://github.com/ApcarJo/BackEnd_ReactMovieSuite and follow its instructions to run it.
+
+Register as a client to use the web app.
+Use: admin@gmail.com * 123456 to access admin role.
+
+This app uses themoviedatabase api to get the data needed for the webapp https://www.themoviedb.org/?language=es-ES
+
+<a name="images"></a>
+## Screenshots 📸
+
+Home
+
+<img src="src/img/screenshots/home.jpg" width="1000">
+
+Login
+
+<img src="src/img/screenshots/login.jpg" width="1000">
+
+Customer profile
+
+<img src="src/img/screenshots/modifyProfile.jpg" width="1000">
+<img src="src/img/screenshots/modifyProfile2.jpg" width="1000">
+
+Create new order using my own datePicker improved since the last project. (https://github.com/ApcarJo/Frontend-Dental-Clinic)
+
+<img src="src/img/screenshots/datePicker.jpg" width="1000">
+
+Pick your movie, select date and rent.
+
+<img src="src/img/screenshots/convertDate_Example2.jpg" width="300"><img src="src/img/screenshots/convertDate_Example.jpg" width="300">
+
+Used own code as "moment" library to convert date types variables to a more comfort type.
+
+<img src="src/img/screenshots/convertDate.jpg" width="500">
+
+Admin role can check all history orders. I had not time to implement my schedule code https://github.com/ApcarJo/Frontend-Dental-Clinic where you can check in a calendar frame the results.
+
+<img src="src/img/screenshots/admin_orders.jpg" width="1000">
+
+Check your appointments history
+
+<img src="src/img/screenshots/genres.jpg" width="1000">
+
+Search input will show you the results in the top of your view
+
+<img src="src/img/screenshots/searchresults.jpg" width="1000">
+
+<a name="tools"></a>
+## Tools 🔧
+
+
+<img src="src/img/javascript.png" width="50"> <img src="src/img/html5.png" width="50"> <img src="src/img/css3.png" width="50"> <img src="src/img/react.png" width="50"> <img src="src/img/redux.png" width="55"> <img src="src/img/node.png" width="65"> <img src="src/img/trello.png" width="60">
+
+Installed dependencies: Redux, React-redux, Redux-localstorage-simple, Nodemon, React-Router-Dom & Axios.
+
+<a name="developers"></a>
+
+## Developers ✍️
+
+[José Luis Aparicio](https://github.com/ApcarJo) 
+
+
+
+---
+
+Thanks to all our classmates for the help and work as a great team.
+
+Things runned out of time to implement:
+- Better design of the content scroll
+- Gradient on scroll
+- Price and costs calculation of the rents
+- Error when register allow you to create an account without a match with repeat password
+- Responsive design
+- Movies by actor, I have failed the endpoint, only actor info with some "known for" movies, so I removed of the search option.
+- To be able to hide the "movie card rent" when you see homescreen first time
+- Heroku deployment
+
+Things I am proud of
+- The modify system
+- The show and hide of the datePicker when you are going to rent a movie
+- The functionality of the movies content carrousel where you can navigate all the pages the moviedatabase api can offer
+
+
+[🔝](#top)
