@@ -20,9 +20,9 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
-    // public function party(){
-    //     return $this->hasMany(Party::class);
-    // }
+    public function party(){
+        return $this->hasMany(Party::class);
+    }
 
     use HasFactory, Notifiable, HasApiTokens;
 

@@ -30,9 +30,9 @@ class Party extends Model
         return $this->hasMany(Subscription::class);
     }
 
-    // public function user(){
-    //     return $this->belongsTo(User::class);
-    // }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 
     use HasFactory;
 }
