@@ -31,7 +31,7 @@ Route::middleware('auth:api')->group(function () {
 
     //COMMENT CONTROLLER
     Route::post('createcomment', [CommentController::class, 'create']);
-    Route::get('partycomments', [CommentController::class, 'index']);
+    Route::post('partycomments', [CommentController::class, 'index']);
     Route::get('allcomments', [CommentController::class, 'allComments']);
     Route::put('modifycomment', [CommentController::class, 'update']);
     Route::delete('deletecomment', [CommentController::class, 'destroy']);

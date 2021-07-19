@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Subscription;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -12,9 +13,49 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $user = auth()->user();
+
+        if ($user) {
+
+            $allComments= Comment::where('party_id', '=', $request->party_id)->get();
+
+            return response()->json([
+                'success' => true,
+                'data' => $allComments,
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'You have no permissions'
+            ], 401);
+        }
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function allComments(Request $request)
+    {
+        $user = auth()->user();
+
+        if ($user) {
+
+            $allComments= Comment::all()->groupBy('party_id');
+
+            return response()->json([
+                'success' => true,
+                'data' => $allComments,
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'You have no permissions'
+            ], 401);
+        }
     }
 
     /**
@@ -25,8 +66,9 @@ class CommentController extends Controller
     public function create(Request $request)
     {
         $user = auth()->user();
+        $sub = Subscription::where('party_id', '=', $request->party_id)->where('user_id', '=', $user->id)->get();
 
-        if ($user) {
+        if (($user)&&($sub)) {
 
             $this->validate($request, [
                 'message' => 'required',
@@ -103,13 +145,16 @@ class CommentController extends Controller
     {
         $user = auth()->user();
 
-        if ($user->isAdmin) {
+        if (($user->isAdmin)||($user->id==$request->user_id)) {
 
-            $comment = Comment::find($request->comment_id);
+            $comment = Comment::all()->find($request->comment_id);
+            $sub = Subscription::where('party_id', '=', $request->party_id)->where('user_id', '=', $user->id)->get();
 
-            if ($comment) {
+            if (($comment->user_id==$user->id)&&($sub)) {
 
-                $update = $comment->fill($request->all())->save();
+                $update = $comment->fill([
+                    'message'=>$request->message
+                ])->save();
 
                 if ($update) {
                     return response()->json([
@@ -118,13 +163,13 @@ class CommentController extends Controller
                 } else {
                     return response()->json([
                         'success' => false,
-                        'message' => 'Game not updated'
+                        'message' => 'Comment not updated'
                     ], 400);
                 }
             } else {
                 return response()->json([
                     'success' => false,
-                    'message' => 'Game not found'
+                    'message' => 'Can not update de comment'
                 ], 400);
             }
         }
@@ -143,8 +188,9 @@ class CommentController extends Controller
         if ($user->id==$request->user_id) {
 
             $comment = Comment::where('id', '=', $request->comment_id)->where('party_id', '=', $request->party_id)->delete();
+            $sub = Subscription::where('party_id', '=', $request->party_id)->where('user_id', '=', $user->id)->get();
 
-            if ($comment) {
+            if (($comment)&&($sub)) {
 
                 return response()->json([
                     'success' => true,
