@@ -89,8 +89,7 @@ Database Diagram
 <a name="tools"></a>
 ## Tools 🔧
 
-
-<img src="src/img/javascript.png" width="50"> <img src="src/img/html5.png" width="50"> <img src="src/img/css3.png" width="50"> <img src="src/img/react.png" width="50"> <img src="src/img/redux.png" width="55"> <img src="src/img/node.png" width="65"> <img src="src/img/trello.png" width="60">
+PHP // Laravel // Composer // Passport // Heroku // GitHub // 
 
 
 
@@ -104,10 +103,11 @@ Database Diagram
 
 ---
 
-Thanks to all our classmates for the help and work as a great team.
+Thanks everyone in this GeeksHubs Academy season. This last project couldnt be possible without your help.
 
 Things runned out of time to implement:
 - Report comments
+- Private chats
 - 
 
 
