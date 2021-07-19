@@ -25,6 +25,9 @@
 
 Challenge from the Fullstack Developer Bootcamp at <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a> where it's requested a backend api rest about a game chat app.
 
+The backend can be tested locally and/or using the deployed version at Heroku: https://passportlaravelapp.herokuapp.com/
+
+
 
 This Project has been done by [José Luis Aparicio](https://github.com/ApcarJo).
 
@@ -72,12 +75,8 @@ Install dependencies
 
 <br>
 
-On the other side, you will need to clone the backend from https://github.com/ApcarJo/BackEnd_ReactMovieSuite and follow its instructions to run it.
+On the other side, you will need to clone the Postman json that it can be found in the root directory as LARAVEL PASSPORT.postman_collection.json.
 
-Register as a client to use the web app.
-Use: admin@gmail.com * 123456 to access admin role.
-
-This app uses themoviedatabase api to get the data needed for the webapp https://www.themoviedb.org/?language=es-ES
 
 <a name="images"></a>
 ## Screenshots 📸

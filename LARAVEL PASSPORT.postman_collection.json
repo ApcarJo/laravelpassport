@@ -1,0 +1,3749 @@
+{
+	"info": {
+		"_postman_id": "f3ba8fcf-c342-4a4c-8f48-6439124aa265",
+		"name": "LARAVEL PASSPORT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LocalHost",
+			"item": [
+				{
+					"name": "Register/Login",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNGIwNjBhMWVjMDJiNWEwMzEwOTY2MTBlMmM5NDNmODhjMDM4MzZiYTNjNGYzYjdkMzMwYmU2MjQxZmJiNTdlZTk1MDI2YzgyZDhiODU3MDUiLCJpYXQiOjE2MjYxMDg1NzYuNzE3OTgxLCJuYmYiOjE2MjYxMDg1NzYuNzE4MDMyLCJleHAiOjE2NTc2NDQ1NzYuNjE3ODgzLCJzdWIiOiI1Iiwic2NvcGVzIjpbXX0.F_uMMvYz9sKme81zuOSeYVdFkOvqmT71Z5fra1lnE6aQhdkDCX-y5LJDjQo_PBkXswqzaX7uJJe-KuzfahXiudAB4WFXcMxe_n9rus2iBzYyZ9Yc2qg-J3QTxsLZZDxcHqghRluQ1bsAP477klj8y2gBpnrlmjuimGiobPZuuIQHW_WbApFLvxEpSG0fA6d1PT9yck7zysN18kfKQ_MZnqu2e-mGzlPSM_3q6lkZqtu7NBMe-Kjo7P7k85SP9qPnGRxh8bps_38d3IjgxIDjI77xWEnQNm1EXvqhWQGhradwjeEywiLTzU80ao1Hrh7WiyvtnDL1oHCWh3z84Cr4U-JJrNMRqgjq6JfFzVUypyCOpSepYjpHj4tlKETJ5q-6c0iepnp243qaAjyN5Cdcv0Hs9ricIqe5xoC_dS7kaI2mVZ1b0YEv1uUomrFf98yjFPusE9LCysqO9i7IcoUSYI6nsJ8JhZAb7Tx0tv6MDKvZr16A9A3mLWo7312tWN8ilGXcxT8Ny5kAES7kAbqs7I67uH1bSO65QyGaxaEIG9gK710ftfgcTMFl4HmPuIQtFfuEH1w6bWTwMCSo000ASIeY0EfRIb9flCAeWqdDKa2LwmItG7W_1_QK2iM2_GS_cz8iEO_znWADMAt9sexKiz5TrL_tovMqYouSC2JiWGg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "userName",
+											"value": "mariana",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "mariana@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "https://passportlaravelapp.herokuapp.com/",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "mariana@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GameController",
+					"item": [
+						{
+							"name": "Create Game",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGI2YzRiMGViNTc1NzkxYTZiNjAwMzliMmZiZDRlODNkY2QyNzY0ZTY2NmFkYzJhM2M5ZmE5ZGY3YWZhMTg0MmQ5MGNlMmNjMjZjM2FiNzUiLCJpYXQiOjE2MjY2NTM4NjQuMzQ2NjQyLCJuYmYiOjE2MjY2NTM4NjQuMzQ2NjgyLCJleHAiOjE2NTgxODk4NjQuMjcyMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.xMs0HoyW-gK041csSlM39zZ8oOKAosln7QkLHkglYUGMzNSw-29skyfHXLquYTijP2AVSjhOo6sCQ3lEfyX8nMiNzYPxsmNpxAuRH1G2TjmPo8ml3xjrJJeRjJVrD9TsSE0q9Fq278snkVNlSRBQI3V7ysU81W9XKghwOdcD-9_AcMzJkQP7V4msPOP30lDruVJm3G0IRDLs6FGc-kGTCQwAd6W33XH9oyk7t2LaBKgf-K1fyiUOdJIB2tVWD-_9PscF8OAW1iYlbUnUSaNn5lzPpUW645SqUIA5gHIRcKkYRGyN6DD1Rc0WfOFgm7GM1iNPPU2XRYK--xrNY5SxY6YCiry2gMjWQbUOBqnxCHNI9cJtkHktE16WCpekDRI8q0-CZJyZu_4_ulV5UHWene8UORBFv_xNZm7qp-LQPZDNa1xemOH0PLAs4Z7l_ZRWheBzEqxb3jtZ5uAqipzI3yTyPmgP91mIYqwnrKdNOp8MABccxCoLQCcFfcdZCWBGO2MmqDiMPGlU5njzYnts_kiZuni8Vcak2RX7WUjWyuwaoaHzmvTnrdPGeDfirBtynhQCSon79Gmvq3nZT3qV57kI9gGP7AwLBTYsBDxAwe-RQNJnsO_arODP5XZU-a43rrhJ_XJQHbP-fYTj_saj0ZQAMDmu4msx9chm-V89kGo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gameTitle\" : \"Tetris\",\r\n    \"thumbnail_url\" : \"fdgfdg\",\r\n    \"url\": \"google.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/addgame",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"addgame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify Game",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmI4N2UzZWM5ZjQyZTdjOWI5MTE0YWVjMmY3ZjYzMTg5NjdlMzg3ODZhYmEyNzAwMTQ2NjZkYjA4NzlmMDk5MmQxMjZlMjU0M2EyOGI1YjEiLCJpYXQiOjE2MjY2MDg4NTcuNDk1NTI3LCJuYmYiOjE2MjY2MDg4NTcuNDk1NTY3LCJleHAiOjE2NTgxNDQ4NTcuNDI1MDAzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.HS7h_dFZxuqVbNMkd7T281vMr74S5EQb-d-TMMWL5dmnotamN5DTvRHfiCvySEDnRXJaqFsCOIQVDEHqbBAkiAnoTG9XkvH-J1QbNqfHGF8qiOX4-ci0l_U6HFRHwONGlPG83nf2tsE2TP5g2jS3LcgkFrXKOtqoTKTOYfX7mCMO1-vuQnfYuD5IJBe6dA83rEE_rdsG_45FeejLrx84acO7GGQSx_PWeJv73WdHxznVmRjKV3F4JtKO3zhE5XZpTMfYeIIklbeX4CPKls5Yim3OeyVOV0sA1c1X0wJxg-UUXnn4v6CCQcuXciH1ocP4VlFS-owlS2j4a8SMox9SGlbtdzYO7txl-OACIpRxVtpnlMBmC74cA7H7KLtGF_SVnr7Qxk4nVAinyCIXo6cQcuguIwVLM6HKY6fDCX3iO0PwwrUGKaACntMk5onwZyRkp6wB8dGtwZDbtaHL2Ckfu75Gp7ZhdxjRswXvnVzbO-6127yp2q_oy5CiV5zi_gJiA8Ffo3Y-bDUG_LSa_EV7VlYWOMZErEdRRVIQe7v4nhW8hUdy2MKKLUF-QGwOjoSIx_-9caZm6OX8XooOc3ZVaRNjAVdBBTAaydiXQwG79iO7S9y9wzoXAX0vfTRFtBdG8kFQ9jHiIa02DYP31eKtVrV9kzd8r0yEZ9fLoCP_GHM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"game_id\" : \"2\",\r\n    \"gameTitle\" : \"Perros vigilantes\",\r\n    \"thumbnail_url\" : \"Chasco\",\r\n    \"url\": \"perrosv.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modifygame",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modifygame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Game",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmI4N2UzZWM5ZjQyZTdjOWI5MTE0YWVjMmY3ZjYzMTg5NjdlMzg3ODZhYmEyNzAwMTQ2NjZkYjA4NzlmMDk5MmQxMjZlMjU0M2EyOGI1YjEiLCJpYXQiOjE2MjY2MDg4NTcuNDk1NTI3LCJuYmYiOjE2MjY2MDg4NTcuNDk1NTY3LCJleHAiOjE2NTgxNDQ4NTcuNDI1MDAzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.HS7h_dFZxuqVbNMkd7T281vMr74S5EQb-d-TMMWL5dmnotamN5DTvRHfiCvySEDnRXJaqFsCOIQVDEHqbBAkiAnoTG9XkvH-J1QbNqfHGF8qiOX4-ci0l_U6HFRHwONGlPG83nf2tsE2TP5g2jS3LcgkFrXKOtqoTKTOYfX7mCMO1-vuQnfYuD5IJBe6dA83rEE_rdsG_45FeejLrx84acO7GGQSx_PWeJv73WdHxznVmRjKV3F4JtKO3zhE5XZpTMfYeIIklbeX4CPKls5Yim3OeyVOV0sA1c1X0wJxg-UUXnn4v6CCQcuXciH1ocP4VlFS-owlS2j4a8SMox9SGlbtdzYO7txl-OACIpRxVtpnlMBmC74cA7H7KLtGF_SVnr7Qxk4nVAinyCIXo6cQcuguIwVLM6HKY6fDCX3iO0PwwrUGKaACntMk5onwZyRkp6wB8dGtwZDbtaHL2Ckfu75Gp7ZhdxjRswXvnVzbO-6127yp2q_oy5CiV5zi_gJiA8Ffo3Y-bDUG_LSa_EV7VlYWOMZErEdRRVIQe7v4nhW8hUdy2MKKLUF-QGwOjoSIx_-9caZm6OX8XooOc3ZVaRNjAVdBBTAaydiXQwG79iO7S9y9wzoXAX0vfTRFtBdG8kFQ9jHiIa02DYP31eKtVrV9kzd8r0yEZ9fLoCP_GHM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"game_id\" : \"5\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/deletegame",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"deletegame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Archive Game",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmI4N2UzZWM5ZjQyZTdjOWI5MTE0YWVjMmY3ZjYzMTg5NjdlMzg3ODZhYmEyNzAwMTQ2NjZkYjA4NzlmMDk5MmQxMjZlMjU0M2EyOGI1YjEiLCJpYXQiOjE2MjY2MDg4NTcuNDk1NTI3LCJuYmYiOjE2MjY2MDg4NTcuNDk1NTY3LCJleHAiOjE2NTgxNDQ4NTcuNDI1MDAzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.HS7h_dFZxuqVbNMkd7T281vMr74S5EQb-d-TMMWL5dmnotamN5DTvRHfiCvySEDnRXJaqFsCOIQVDEHqbBAkiAnoTG9XkvH-J1QbNqfHGF8qiOX4-ci0l_U6HFRHwONGlPG83nf2tsE2TP5g2jS3LcgkFrXKOtqoTKTOYfX7mCMO1-vuQnfYuD5IJBe6dA83rEE_rdsG_45FeejLrx84acO7GGQSx_PWeJv73WdHxznVmRjKV3F4JtKO3zhE5XZpTMfYeIIklbeX4CPKls5Yim3OeyVOV0sA1c1X0wJxg-UUXnn4v6CCQcuXciH1ocP4VlFS-owlS2j4a8SMox9SGlbtdzYO7txl-OACIpRxVtpnlMBmC74cA7H7KLtGF_SVnr7Qxk4nVAinyCIXo6cQcuguIwVLM6HKY6fDCX3iO0PwwrUGKaACntMk5onwZyRkp6wB8dGtwZDbtaHL2Ckfu75Gp7ZhdxjRswXvnVzbO-6127yp2q_oy5CiV5zi_gJiA8Ffo3Y-bDUG_LSa_EV7VlYWOMZErEdRRVIQe7v4nhW8hUdy2MKKLUF-QGwOjoSIx_-9caZm6OX8XooOc3ZVaRNjAVdBBTAaydiXQwG79iO7S9y9wzoXAX0vfTRFtBdG8kFQ9jHiIa02DYP31eKtVrV9kzd8r0yEZ9fLoCP_GHM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"game_id\" : \"5\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/archivegame",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"archivegame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Choose game byId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmI4N2UzZWM5ZjQyZTdjOWI5MTE0YWVjMmY3ZjYzMTg5NjdlMzg3ODZhYmEyNzAwMTQ2NjZkYjA4NzlmMDk5MmQxMjZlMjU0M2EyOGI1YjEiLCJpYXQiOjE2MjY2MDg4NTcuNDk1NTI3LCJuYmYiOjE2MjY2MDg4NTcuNDk1NTY3LCJleHAiOjE2NTgxNDQ4NTcuNDI1MDAzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.HS7h_dFZxuqVbNMkd7T281vMr74S5EQb-d-TMMWL5dmnotamN5DTvRHfiCvySEDnRXJaqFsCOIQVDEHqbBAkiAnoTG9XkvH-J1QbNqfHGF8qiOX4-ci0l_U6HFRHwONGlPG83nf2tsE2TP5g2jS3LcgkFrXKOtqoTKTOYfX7mCMO1-vuQnfYuD5IJBe6dA83rEE_rdsG_45FeejLrx84acO7GGQSx_PWeJv73WdHxznVmRjKV3F4JtKO3zhE5XZpTMfYeIIklbeX4CPKls5Yim3OeyVOV0sA1c1X0wJxg-UUXnn4v6CCQcuXciH1ocP4VlFS-owlS2j4a8SMox9SGlbtdzYO7txl-OACIpRxVtpnlMBmC74cA7H7KLtGF_SVnr7Qxk4nVAinyCIXo6cQcuguIwVLM6HKY6fDCX3iO0PwwrUGKaACntMk5onwZyRkp6wB8dGtwZDbtaHL2Ckfu75Gp7ZhdxjRswXvnVzbO-6127yp2q_oy5CiV5zi_gJiA8Ffo3Y-bDUG_LSa_EV7VlYWOMZErEdRRVIQe7v4nhW8hUdy2MKKLUF-QGwOjoSIx_-9caZm6OX8XooOc3ZVaRNjAVdBBTAaydiXQwG79iO7S9y9wzoXAX0vfTRFtBdG8kFQ9jHiIa02DYP31eKtVrV9kzd8r0yEZ9fLoCP_GHM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"game_id\" : \"3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/choosegame",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"choosegame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Game by gameTitle",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTNkYTZlZmJiMGUwYTJhNzE4OTg1YWMwOGI0YzgzNjA5ODAxMDY5ODQ5NjU0MWVkYWM1NTAzNzEyOGY0MWZmY2Y2ZmI5ZDliOTM4MDZiYTkiLCJpYXQiOjE2MjY2MjczOTkuNTAzMDM3LCJuYmYiOjE2MjY2MjczOTkuNTAzMTI1LCJleHAiOjE2NTgxNjMzOTkuNDA0OTMyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QlcUcZcB3QxBVPioRMbI2roHKlB_CuuJCXKf_Db-hHeARBrqB55uQS0jJNE-aQNWg9mgxbMaBrGmcGVVfQFPqsUQjW4ZoVBFpAPRlxmWtX_r0RnesSOR5pF5TNk02GonkGkDoxu8UXH6FCdwPqOUM1EKnP3WT_eCz1A3RDRyiemH-COYAj-IZ4SF5kzE2VbDmLRXmDamHTH0vzaVL0YAY5si8AZY1l6dy76Jt3qPZB-EvyTS0yuyBI3H-_QW7zfX88-ScWZY4_Tl5JODShjKcuSlXm6AuddfXD7Qqav2RoBIaE4xt9EAIgdpmhmFCeq7AwQI5KBxVK2roCy17Rw65hzXMYSLuUQDy-oNaau8lxvl_oOtKAWSEs8919CXiw7PaX9YYzmwuGHFOjZ-I4CdN-61_fM51XFle-Ma69yrVYuXegBA-izUbsSQoI3i8CXPVPdDi5UszhA9_tscemPkSgD-COKTv_-uDhMI7PQLV1B_N6H0RxDkww6G4c5gZgUUF-TCPJDeeh9WurHCbODIXcjYidfFDFtrFn3jbMai3M3iQIRbfrS0_LDNO4St8f_xlJKH3CNqnhp6_9n30s3nzRqff0hvpdOTXj0apYc9tE17asSpji5HqeINgIMRly-MZDjcYYfwlB8fBWtAYpJL3_ZvM3cVO-0qBuZb3jypnbw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gameTitle\" : \"Metal\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/findgame",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"findgame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Select Game by gameTitle",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTNkYTZlZmJiMGUwYTJhNzE4OTg1YWMwOGI0YzgzNjA5ODAxMDY5ODQ5NjU0MWVkYWM1NTAzNzEyOGY0MWZmY2Y2ZmI5ZDliOTM4MDZiYTkiLCJpYXQiOjE2MjY2MjczOTkuNTAzMDM3LCJuYmYiOjE2MjY2MjczOTkuNTAzMTI1LCJleHAiOjE2NTgxNjMzOTkuNDA0OTMyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QlcUcZcB3QxBVPioRMbI2roHKlB_CuuJCXKf_Db-hHeARBrqB55uQS0jJNE-aQNWg9mgxbMaBrGmcGVVfQFPqsUQjW4ZoVBFpAPRlxmWtX_r0RnesSOR5pF5TNk02GonkGkDoxu8UXH6FCdwPqOUM1EKnP3WT_eCz1A3RDRyiemH-COYAj-IZ4SF5kzE2VbDmLRXmDamHTH0vzaVL0YAY5si8AZY1l6dy76Jt3qPZB-EvyTS0yuyBI3H-_QW7zfX88-ScWZY4_Tl5JODShjKcuSlXm6AuddfXD7Qqav2RoBIaE4xt9EAIgdpmhmFCeq7AwQI5KBxVK2roCy17Rw65hzXMYSLuUQDy-oNaau8lxvl_oOtKAWSEs8919CXiw7PaX9YYzmwuGHFOjZ-I4CdN-61_fM51XFle-Ma69yrVYuXegBA-izUbsSQoI3i8CXPVPdDi5UszhA9_tscemPkSgD-COKTv_-uDhMI7PQLV1B_N6H0RxDkww6G4c5gZgUUF-TCPJDeeh9WurHCbODIXcjYidfFDFtrFn3jbMai3M3iQIRbfrS0_LDNO4St8f_xlJKH3CNqnhp6_9n30s3nzRqff0hvpdOTXj0apYc9tE17asSpji5HqeINgIMRly-MZDjcYYfwlB8fBWtAYpJL3_ZvM3cVO-0qBuZb3jypnbw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gameTitle\" : \"Metal\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/selectgame",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"selectgame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all games",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gameTitle\" : \"God of war\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/allgames",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"allgames"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find active games",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmI4N2UzZWM5ZjQyZTdjOWI5MTE0YWVjMmY3ZjYzMTg5NjdlMzg3ODZhYmEyNzAwMTQ2NjZkYjA4NzlmMDk5MmQxMjZlMjU0M2EyOGI1YjEiLCJpYXQiOjE2MjY2MDg4NTcuNDk1NTI3LCJuYmYiOjE2MjY2MDg4NTcuNDk1NTY3LCJleHAiOjE2NTgxNDQ4NTcuNDI1MDAzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.HS7h_dFZxuqVbNMkd7T281vMr74S5EQb-d-TMMWL5dmnotamN5DTvRHfiCvySEDnRXJaqFsCOIQVDEHqbBAkiAnoTG9XkvH-J1QbNqfHGF8qiOX4-ci0l_U6HFRHwONGlPG83nf2tsE2TP5g2jS3LcgkFrXKOtqoTKTOYfX7mCMO1-vuQnfYuD5IJBe6dA83rEE_rdsG_45FeejLrx84acO7GGQSx_PWeJv73WdHxznVmRjKV3F4JtKO3zhE5XZpTMfYeIIklbeX4CPKls5Yim3OeyVOV0sA1c1X0wJxg-UUXnn4v6CCQcuXciH1ocP4VlFS-owlS2j4a8SMox9SGlbtdzYO7txl-OACIpRxVtpnlMBmC74cA7H7KLtGF_SVnr7Qxk4nVAinyCIXo6cQcuguIwVLM6HKY6fDCX3iO0PwwrUGKaACntMk5onwZyRkp6wB8dGtwZDbtaHL2Ckfu75Gp7ZhdxjRswXvnVzbO-6127yp2q_oy5CiV5zi_gJiA8Ffo3Y-bDUG_LSa_EV7VlYWOMZErEdRRVIQe7v4nhW8hUdy2MKKLUF-QGwOjoSIx_-9caZm6OX8XooOc3ZVaRNjAVdBBTAaydiXQwG79iO7S9y9wzoXAX0vfTRFtBdG8kFQ9jHiIa02DYP31eKtVrV9kzd8r0yEZ9fLoCP_GHM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gameTitle\" : \"God of war\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/activegames",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"activegames"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UserController",
+					"item": [
+						{
+							"name": "Modify User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMmUyNTI1YzlkZDE4YTVhNmM3YzRmM2IxMDc5YTNhYjVjYjYxZGQwNTU4MzkxMmM3OTUzNmI3OTVmOGFmNTdjNzFlMzAzYjdkZTc4Y2JhYmUiLCJpYXQiOjE2MjY2MjU1MDguNjc2NDI0LCJuYmYiOjE2MjY2MjU1MDguNjc2NTExLCJleHAiOjE2NTgxNjE1MDguNTk3Mjg2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.NocLyd76cOJFXGGkTcYZTMegFJ8QhnvRTdX9qfuXXjrpJKiP4WG4QT-4krlbIT5b14PAiP7v99doecqYP0kZNcD4ak7RBJyGY0_BMOupm2fjr1KRpQ7k80b8P3lq8ARbyqXjIMeBLTRGCeDTl8K2DnKwW3Uj_qwmlt69lMzwHWzCvkU1qkjEpSl60dNZaclV2Oq6a7u3cHdEnm5eilaD5oY25I_HCXk3yc-48wP6sLxWHOCBqO2XXLvGpXx4H0kvy8HREvbhSDLh0kwjpnEuPlTES3Ao-DXwkUAvR9pQrsPysgr5MHTvQESN54KwjKvL5untyRFktJYy4-q_e5gw6cv_csdwYLbFyZnz2xayDqLSpQKyMfqhgRRgwXEs_IO116KQXGCF2LlJJw4ROEa3XQFaSYmGuMGOcZrdrzTRXxr_2zPfF5xer8CQYEfz5MWihcBLfSRkGBbDhGkVElU9I7rbrJpodXVdqwAovWFcgE45ysjAXbSI0YG0n3AC0-c3H0uKc-3GrbtyJjigE1fPGZSf3YtIrHM1bxTMdN0yYE65-HjmS3nhxmBTRcb2x1BO9qY6Tjd2f8i5MX1Bvm4Pw-71xF1fvUBcHN_AIAXI1t5IvW-vdSJjQlwlyC9gyagqgFQR69xhuXt17PEFtqS8YoEqc7nJ5uxpMXQdSzuvSWQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\" : \"3\",\r\n    \"epic_id\" : \"jkldsf\",\r\n    \"steam_id\" : \"todos\",\r\n    \"blizzard_id\": \"moriran\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modifyuser",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modifyuser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTRkZTJhOWQ3ZWI5MDY3MzQyYjkzYTViOTM1YWQ1MDcxMTM3MTE3M2I1MDQ4MTQwZThiODNjZmJhYmJkOTc2NTM5Y2M3ZTkwY2JlMWI2NWEiLCJpYXQiOjE2MjY2MTk3NjcuMjEzMTk3LCJuYmYiOjE2MjY2MTk3NjcuMjEzMjM1LCJleHAiOjE2NTgxNTU3NjcuMTI1OTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.l2JVLXIQChVhpfqkcevSAzyFVsRA75tJq_oC8-9JTqSr8FEfAR7RmV_8bkXuTQunjj4Fq73TklMJh54QBXonxQFHmmd29lZoVxTx8m66gALG06k3GRrDta02Y7FsWicFGz8H6nvaEyXMtrMO0urSak8PMacIYAMT4leYFgBG9iIwaOI60ecR4PWYm7w2ukJAxVURNUOPiWjcF1ZFNPlhqCec5v9ZYNmZ6MSZaC0iwIqINY8p2RmYhdQB5ZGvCaHS7l8LmjZt6icCtlXzIGzMWqYdIrfNTJePAh6g7PHH1LO6HHK-eyfufH7vprNkxJjGvBBKTCHXrJS3ui2ta3Hf3zbSyBXyUxFcfXXPkLEHi1RsNm0iZhSgsikc54WNg0caXcYO_Gku478w2e7h5VCxRf25Ob06LwTUWHFM0DwrLOQqozl2rCbYiTNrDiBxVNCXeEXjuUdD9G-l-73sjD0a2CBrX9x70N_L7CKRcT9LNXiBl1ovEmOePO8kqX7kVpFwICdXlKWU-y3XKkaoYeKoIRuTwtqRAebrk-MlsVXM6MxuD2d_GXSm2xGv7h59FYH5z4ArD2J20njGOpPYa6PbdcunI1Am9XdzG4eysrU88bhy5Ar39IBIJJ2mFmw3bfeb2kcZVkcvmp9pBcjX3javXomAOxfh8j7m7ipY-N_htsA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\" : \"4\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/deleteuser",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"deleteuser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Archive User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTRkZTJhOWQ3ZWI5MDY3MzQyYjkzYTViOTM1YWQ1MDcxMTM3MTE3M2I1MDQ4MTQwZThiODNjZmJhYmJkOTc2NTM5Y2M3ZTkwY2JlMWI2NWEiLCJpYXQiOjE2MjY2MTk3NjcuMjEzMTk3LCJuYmYiOjE2MjY2MTk3NjcuMjEzMjM1LCJleHAiOjE2NTgxNTU3NjcuMTI1OTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.l2JVLXIQChVhpfqkcevSAzyFVsRA75tJq_oC8-9JTqSr8FEfAR7RmV_8bkXuTQunjj4Fq73TklMJh54QBXonxQFHmmd29lZoVxTx8m66gALG06k3GRrDta02Y7FsWicFGz8H6nvaEyXMtrMO0urSak8PMacIYAMT4leYFgBG9iIwaOI60ecR4PWYm7w2ukJAxVURNUOPiWjcF1ZFNPlhqCec5v9ZYNmZ6MSZaC0iwIqINY8p2RmYhdQB5ZGvCaHS7l8LmjZt6icCtlXzIGzMWqYdIrfNTJePAh6g7PHH1LO6HHK-eyfufH7vprNkxJjGvBBKTCHXrJS3ui2ta3Hf3zbSyBXyUxFcfXXPkLEHi1RsNm0iZhSgsikc54WNg0caXcYO_Gku478w2e7h5VCxRf25Ob06LwTUWHFM0DwrLOQqozl2rCbYiTNrDiBxVNCXeEXjuUdD9G-l-73sjD0a2CBrX9x70N_L7CKRcT9LNXiBl1ovEmOePO8kqX7kVpFwICdXlKWU-y3XKkaoYeKoIRuTwtqRAebrk-MlsVXM6MxuD2d_GXSm2xGv7h59FYH5z4ArD2J20njGOpPYa6PbdcunI1Am9XdzG4eysrU88bhy5Ar39IBIJJ2mFmw3bfeb2kcZVkcvmp9pBcjX3javXomAOxfh8j7m7ipY-N_htsA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\" : \"1\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/archiveuser",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"archiveuser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Choose User byId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTRkZTJhOWQ3ZWI5MDY3MzQyYjkzYTViOTM1YWQ1MDcxMTM3MTE3M2I1MDQ4MTQwZThiODNjZmJhYmJkOTc2NTM5Y2M3ZTkwY2JlMWI2NWEiLCJpYXQiOjE2MjY2MTk3NjcuMjEzMTk3LCJuYmYiOjE2MjY2MTk3NjcuMjEzMjM1LCJleHAiOjE2NTgxNTU3NjcuMTI1OTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.l2JVLXIQChVhpfqkcevSAzyFVsRA75tJq_oC8-9JTqSr8FEfAR7RmV_8bkXuTQunjj4Fq73TklMJh54QBXonxQFHmmd29lZoVxTx8m66gALG06k3GRrDta02Y7FsWicFGz8H6nvaEyXMtrMO0urSak8PMacIYAMT4leYFgBG9iIwaOI60ecR4PWYm7w2ukJAxVURNUOPiWjcF1ZFNPlhqCec5v9ZYNmZ6MSZaC0iwIqINY8p2RmYhdQB5ZGvCaHS7l8LmjZt6icCtlXzIGzMWqYdIrfNTJePAh6g7PHH1LO6HHK-eyfufH7vprNkxJjGvBBKTCHXrJS3ui2ta3Hf3zbSyBXyUxFcfXXPkLEHi1RsNm0iZhSgsikc54WNg0caXcYO_Gku478w2e7h5VCxRf25Ob06LwTUWHFM0DwrLOQqozl2rCbYiTNrDiBxVNCXeEXjuUdD9G-l-73sjD0a2CBrX9x70N_L7CKRcT9LNXiBl1ovEmOePO8kqX7kVpFwICdXlKWU-y3XKkaoYeKoIRuTwtqRAebrk-MlsVXM6MxuD2d_GXSm2xGv7h59FYH5z4ArD2J20njGOpPYa6PbdcunI1Am9XdzG4eysrU88bhy5Ar39IBIJJ2mFmw3bfeb2kcZVkcvmp9pBcjX3javXomAOxfh8j7m7ipY-N_htsA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\" : \"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/chooseuser",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"chooseuser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find User by userName",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTNkYTZlZmJiMGUwYTJhNzE4OTg1YWMwOGI0YzgzNjA5ODAxMDY5ODQ5NjU0MWVkYWM1NTAzNzEyOGY0MWZmY2Y2ZmI5ZDliOTM4MDZiYTkiLCJpYXQiOjE2MjY2MjczOTkuNTAzMDM3LCJuYmYiOjE2MjY2MjczOTkuNTAzMTI1LCJleHAiOjE2NTgxNjMzOTkuNDA0OTMyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QlcUcZcB3QxBVPioRMbI2roHKlB_CuuJCXKf_Db-hHeARBrqB55uQS0jJNE-aQNWg9mgxbMaBrGmcGVVfQFPqsUQjW4ZoVBFpAPRlxmWtX_r0RnesSOR5pF5TNk02GonkGkDoxu8UXH6FCdwPqOUM1EKnP3WT_eCz1A3RDRyiemH-COYAj-IZ4SF5kzE2VbDmLRXmDamHTH0vzaVL0YAY5si8AZY1l6dy76Jt3qPZB-EvyTS0yuyBI3H-_QW7zfX88-ScWZY4_Tl5JODShjKcuSlXm6AuddfXD7Qqav2RoBIaE4xt9EAIgdpmhmFCeq7AwQI5KBxVK2roCy17Rw65hzXMYSLuUQDy-oNaau8lxvl_oOtKAWSEs8919CXiw7PaX9YYzmwuGHFOjZ-I4CdN-61_fM51XFle-Ma69yrVYuXegBA-izUbsSQoI3i8CXPVPdDi5UszhA9_tscemPkSgD-COKTv_-uDhMI7PQLV1B_N6H0RxDkww6G4c5gZgUUF-TCPJDeeh9WurHCbODIXcjYidfFDFtrFn3jbMai3M3iQIRbfrS0_LDNO4St8f_xlJKH3CNqnhp6_9n30s3nzRqff0hvpdOTXj0apYc9tE17asSpji5HqeINgIMRly-MZDjcYYfwlB8fBWtAYpJL3_ZvM3cVO-0qBuZb3jypnbw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"Maria\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/finduser",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"finduser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Select User by userName",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODk0ZDhmNmE1OTc5ZWY0YzM1MGMwYjI0NTM2MmU1YWJjOGQ0MjAwYzY1Y2Q5Yzc0NDcwODFhYTEyMjJjOTVjM2NjYWNkZDQyNDUwMDQ1NDUiLCJpYXQiOjE2MjY0MzIwNjIuMDIyODMzLCJuYmYiOjE2MjY0MzIwNjIuMDIyODM3LCJleHAiOjE2NTc5NjgwNjEuOTk5MDkyLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.phPIhOEDztN5rSQ4Mo4KTnczDTK9VNHCplTtnUEvQcFQKzuJolUl-lsawEr8sBEoxAJKjL55vKwlFXDLC2Iu9pQdaB_wbuQzs_T8-Uw8YaGdA1Zjp-pvkDrnV7edXYa2GjhNzS0RSmxX_Y43r7JkVUNlfGjubrUM6GQcJuP2A-6t84Y7RKYwhptkiyr8cfxzFmmdoKk6_Rb18jcNVW8km4dVg_siInLUNxVa9dnjyAl4cVrDUegIyrHz2okVlqXYS5EpNYE-r5wqzfq1zdvawa2nmbYCFdjOL_WBbv_oB_n2uLeLWjac4SxwpbzXpCKuSqX8omSHJzTY_ukfBL-KgzK3kKY5ZoL5v7x50F9eu8PLJ20m7UUhYyu1hsRXDkq8XAzim-S1J7uV0ctnsnP5lijAkJOMEWcb6U3NiQYKvgAE9QMp8wpWNlhVJ4oK7weQs0Wx_f3oGIUSiEi1-u2FuYdB1kuH_dbIn_GzFcNhhHzFYMTptD1jCl4j3mlrokPWZSahQMFkU3x3XXXaszFUjJNqinbwP9sPAH3kwCJbqMMiSmu0tox7a92UkBcS_Er1EWFtXhmnHbGkFVNhuTTBkXO6T6v2Qrz0pPS_5uw2sDNxVqzaSI7RW_S-xa2rsw_26zDlHcCyT6pfnJseLMKzo7b1Dw1ySUBapLfbFP0xrxUeyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGFiNjk0ZDM5OTIwMWU2ZTdjNmY3ODVkNzFjNjNhYTcwYzBjZmQ0NmNjYWZjOWRkMDIzMTQ1MThjZGY2ZmIzZDJkYjUyOGZjMTIwZWQyMTAiLCJpYXQiOjE2MjY0MzMyNTkuNjY0MDc3LCJuYmYiOjE2MjY0MzMyNTkuNjY0MDgyLCJleHAiOjE2NTc5NjkyNTkuNjU1NTg3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Q4-xUCe80NlMFa87gUnAzz3tRWYiRuYxW5ZtxNSvvYusPOAMmnC_k6QqX-shw3ZtEuFQ1vpWKb_bVGHzklTa8qLHup75jUINw_SpUk4p6p76GPrJOkbBvtM2UBAtN_310TKJpPAIE2pDnefYuxRhHos3pR_JBtDMiEhYoeGZQMvU7LK0BYPDYOLN7LZsBlkV9q0Q8_ODNF7Z-Tc5j-AkHNTZYLuK-kClc3H-V1wesg4KkMokM8onH272zBL13s40SsL7NcVZgnq55Emku0tY_gx_OHE40CCQxUws72isiyVRJodRS_B_6WR0f1TW4rl9xEBBmtPsGgJQToe8uTY3baa_NGGXR-zt7XEj9gYuD3ISAK95IQbr9plfjq0vRTaExsyli3aauGtbfV2KNynRXvTFAjhXFtE0_PZTN-je3ze0wcnmIZw-FGJERQxYruQHQLaf19gC9xi0hI6t9xWzm_M0-WBP9xj2DztREf2W8Xg-xaqhVKkGMm4EvEHqUjtCQA7S_tTCel90LemIRUW0zUhoYYu7s35bNGusSwooGySzwt39zH9eIrX073agH4Scb8t7JEPeq5Bj34bccr8oAjy2cMFbi3XVE28Tx8xNcT5i2BuNcsgkWOE81q2zBx5HrhEqRGuB16oiJuXd5yo68ckq6bFkKUK0UP-QHxrkRC4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"God of war\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/selectuser",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"selectuser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTRkZTJhOWQ3ZWI5MDY3MzQyYjkzYTViOTM1YWQ1MDcxMTM3MTE3M2I1MDQ4MTQwZThiODNjZmJhYmJkOTc2NTM5Y2M3ZTkwY2JlMWI2NWEiLCJpYXQiOjE2MjY2MTk3NjcuMjEzMTk3LCJuYmYiOjE2MjY2MTk3NjcuMjEzMjM1LCJleHAiOjE2NTgxNTU3NjcuMTI1OTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.l2JVLXIQChVhpfqkcevSAzyFVsRA75tJq_oC8-9JTqSr8FEfAR7RmV_8bkXuTQunjj4Fq73TklMJh54QBXonxQFHmmd29lZoVxTx8m66gALG06k3GRrDta02Y7FsWicFGz8H6nvaEyXMtrMO0urSak8PMacIYAMT4leYFgBG9iIwaOI60ecR4PWYm7w2ukJAxVURNUOPiWjcF1ZFNPlhqCec5v9ZYNmZ6MSZaC0iwIqINY8p2RmYhdQB5ZGvCaHS7l8LmjZt6icCtlXzIGzMWqYdIrfNTJePAh6g7PHH1LO6HHK-eyfufH7vprNkxJjGvBBKTCHXrJS3ui2ta3Hf3zbSyBXyUxFcfXXPkLEHi1RsNm0iZhSgsikc54WNg0caXcYO_Gku478w2e7h5VCxRf25Ob06LwTUWHFM0DwrLOQqozl2rCbYiTNrDiBxVNCXeEXjuUdD9G-l-73sjD0a2CBrX9x70N_L7CKRcT9LNXiBl1ovEmOePO8kqX7kVpFwICdXlKWU-y3XKkaoYeKoIRuTwtqRAebrk-MlsVXM6MxuD2d_GXSm2xGv7h59FYH5z4ArD2J20njGOpPYa6PbdcunI1Am9XdzG4eysrU88bhy5Ar39IBIJJ2mFmw3bfeb2kcZVkcvmp9pBcjX3javXomAOxfh8j7m7ipY-N_htsA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gameTitle\" : \"God of war\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/allusers",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"allusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find active users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTRkZTJhOWQ3ZWI5MDY3MzQyYjkzYTViOTM1YWQ1MDcxMTM3MTE3M2I1MDQ4MTQwZThiODNjZmJhYmJkOTc2NTM5Y2M3ZTkwY2JlMWI2NWEiLCJpYXQiOjE2MjY2MTk3NjcuMjEzMTk3LCJuYmYiOjE2MjY2MTk3NjcuMjEzMjM1LCJleHAiOjE2NTgxNTU3NjcuMTI1OTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.l2JVLXIQChVhpfqkcevSAzyFVsRA75tJq_oC8-9JTqSr8FEfAR7RmV_8bkXuTQunjj4Fq73TklMJh54QBXonxQFHmmd29lZoVxTx8m66gALG06k3GRrDta02Y7FsWicFGz8H6nvaEyXMtrMO0urSak8PMacIYAMT4leYFgBG9iIwaOI60ecR4PWYm7w2ukJAxVURNUOPiWjcF1ZFNPlhqCec5v9ZYNmZ6MSZaC0iwIqINY8p2RmYhdQB5ZGvCaHS7l8LmjZt6icCtlXzIGzMWqYdIrfNTJePAh6g7PHH1LO6HHK-eyfufH7vprNkxJjGvBBKTCHXrJS3ui2ta3Hf3zbSyBXyUxFcfXXPkLEHi1RsNm0iZhSgsikc54WNg0caXcYO_Gku478w2e7h5VCxRf25Ob06LwTUWHFM0DwrLOQqozl2rCbYiTNrDiBxVNCXeEXjuUdD9G-l-73sjD0a2CBrX9x70N_L7CKRcT9LNXiBl1ovEmOePO8kqX7kVpFwICdXlKWU-y3XKkaoYeKoIRuTwtqRAebrk-MlsVXM6MxuD2d_GXSm2xGv7h59FYH5z4ArD2J20njGOpPYa6PbdcunI1Am9XdzG4eysrU88bhy5Ar39IBIJJ2mFmw3bfeb2kcZVkcvmp9pBcjX3javXomAOxfh8j7m7ipY-N_htsA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gameTitle\" : \"God of war\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/activeusers",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"activeusers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PartyController",
+					"item": [
+						{
+							"name": "Modify Party",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"party_id\" : \"4\",\r\n    \"partyName\" : \"el último mohicano\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modifyparty",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modifyparty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Party",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"party_id\" : \"5\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/deleteparty",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"deleteparty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Archive Party",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"party_id\" : \"4\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/archiveparty",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"archiveparty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Choose Party byId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"party_id\" : \"5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/chooseparty",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"chooseparty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Party by name",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partyName\" : \"Pang\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/findparty",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"findparty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Select Party by name",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partyName\" : \"Pangomia\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/selectparty",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"selectparty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all parties",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGI2YzRiMGViNTc1NzkxYTZiNjAwMzliMmZiZDRlODNkY2QyNzY0ZTY2NmFkYzJhM2M5ZmE5ZGY3YWZhMTg0MmQ5MGNlMmNjMjZjM2FiNzUiLCJpYXQiOjE2MjY2NTM4NjQuMzQ2NjQyLCJuYmYiOjE2MjY2NTM4NjQuMzQ2NjgyLCJleHAiOjE2NTgxODk4NjQuMjcyMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.xMs0HoyW-gK041csSlM39zZ8oOKAosln7QkLHkglYUGMzNSw-29skyfHXLquYTijP2AVSjhOo6sCQ3lEfyX8nMiNzYPxsmNpxAuRH1G2TjmPo8ml3xjrJJeRjJVrD9TsSE0q9Fq278snkVNlSRBQI3V7ysU81W9XKghwOdcD-9_AcMzJkQP7V4msPOP30lDruVJm3G0IRDLs6FGc-kGTCQwAd6W33XH9oyk7t2LaBKgf-K1fyiUOdJIB2tVWD-_9PscF8OAW1iYlbUnUSaNn5lzPpUW645SqUIA5gHIRcKkYRGyN6DD1Rc0WfOFgm7GM1iNPPU2XRYK--xrNY5SxY6YCiry2gMjWQbUOBqnxCHNI9cJtkHktE16WCpekDRI8q0-CZJyZu_4_ulV5UHWene8UORBFv_xNZm7qp-LQPZDNa1xemOH0PLAs4Z7l_ZRWheBzEqxb3jtZ5uAqipzI3yTyPmgP91mIYqwnrKdNOp8MABccxCoLQCcFfcdZCWBGO2MmqDiMPGlU5njzYnts_kiZuni8Vcak2RX7WUjWyuwaoaHzmvTnrdPGeDfirBtynhQCSon79Gmvq3nZT3qV57kI9gGP7AwLBTYsBDxAwe-RQNJnsO_arODP5XZU-a43rrhJ_XJQHbP-fYTj_saj0ZQAMDmu4msx9chm-V89kGo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/allparties",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"allparties"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find active parties",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/activeparties",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"activeparties"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all Game parties",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGI2YzRiMGViNTc1NzkxYTZiNjAwMzliMmZiZDRlODNkY2QyNzY0ZTY2NmFkYzJhM2M5ZmE5ZGY3YWZhMTg0MmQ5MGNlMmNjMjZjM2FiNzUiLCJpYXQiOjE2MjY2NTM4NjQuMzQ2NjQyLCJuYmYiOjE2MjY2NTM4NjQuMzQ2NjgyLCJleHAiOjE2NTgxODk4NjQuMjcyMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.xMs0HoyW-gK041csSlM39zZ8oOKAosln7QkLHkglYUGMzNSw-29skyfHXLquYTijP2AVSjhOo6sCQ3lEfyX8nMiNzYPxsmNpxAuRH1G2TjmPo8ml3xjrJJeRjJVrD9TsSE0q9Fq278snkVNlSRBQI3V7ysU81W9XKghwOdcD-9_AcMzJkQP7V4msPOP30lDruVJm3G0IRDLs6FGc-kGTCQwAd6W33XH9oyk7t2LaBKgf-K1fyiUOdJIB2tVWD-_9PscF8OAW1iYlbUnUSaNn5lzPpUW645SqUIA5gHIRcKkYRGyN6DD1Rc0WfOFgm7GM1iNPPU2XRYK--xrNY5SxY6YCiry2gMjWQbUOBqnxCHNI9cJtkHktE16WCpekDRI8q0-CZJyZu_4_ulV5UHWene8UORBFv_xNZm7qp-LQPZDNa1xemOH0PLAs4Z7l_ZRWheBzEqxb3jtZ5uAqipzI3yTyPmgP91mIYqwnrKdNOp8MABccxCoLQCcFfcdZCWBGO2MmqDiMPGlU5njzYnts_kiZuni8Vcak2RX7WUjWyuwaoaHzmvTnrdPGeDfirBtynhQCSon79Gmvq3nZT3qV57kI9gGP7AwLBTYsBDxAwe-RQNJnsO_arODP5XZU-a43rrhJ_XJQHbP-fYTj_saj0ZQAMDmu4msx9chm-V89kGo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"game_id\" : \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/gameparties",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"gameparties"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Party",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDhkYjllMjgxNTc2OTMyYzE1YzMyYTI1ZGRmYTU2ZWU3NDViYjZkYmYzY2JjZmFkMWUxZjI3Nzk1MzcxZWI3MjFlODdlZWZiZDJkZWJlNDQiLCJpYXQiOjE2MjY2NTYzOTEuNjg3ODEzLCJuYmYiOjE2MjY2NTYzOTEuNjg3OTM2LCJleHAiOjE2NTgxOTIzOTEuNjAxNzM1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.w5KXeLQEq9xIUe8k2aq6ER0tcjwLUFWtHgRWNPs29LCI8gA2Aajl9K9_Aj2wbj0SuVpHxeoO45ebKGe2HLhhcyGulcl6pG0Mn5nO1_xKiPz2Dbw5MyEtDRGf36QhWEwo0uYKP6GBm-tPvz67YaHo5Kj5xgypP_xzAlgSKpUTHgmgChwt9af-0SOP5_Zgx3wzZYAtpRBf6fiE9POaxbX5e_lB15ObGNgDP3rOsvscnlNmbTVIcmW5mVFi6S_7E7mVhjyQlEZwVzWlwsTcF73TMR6k3on2P6r9QaHeIa6ey6GMVYOKXgSDSj_iAsp1jLjtJpGCaHSg2SSro_xC6E8DXhlesak2fzJwkzcNwxVzHWzHq3LDVHA-ZCY3SiQdAoo8evgx9pjDmttwnVTahlH9hMjulEr0xGKjvqXQAvDpnXEZxMV5LkcDolO4XdFQ4zb25Lr8gm_w8uxM5VuYV_XYTeAqwQxUwxNOhqvZtCanbKMW-qwsw3WvA15reOQ692TcXHaks79NZXuJPQctI8iGsw5TJA78acJs4NYoXrdNFUrE2y7gAHF_iTdP8vBFNbhJeMNQoo1s-eAh9ENDp3ZlhPu8Qcsd1I8gar1meksr8V64LrqRVSnUcxNmBi6AEkMHXRvxa7fBtdEN8ULJZxKXL4glRiRYiiuGgnpAMoHFsF4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partyName\" : \"La villa party\",\r\n    \"game_id\" : \"3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/createparty",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"createparty"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SubscriptionController",
+					"item": [
+						{
+							"name": "Delete Subscription",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiY2ZkNjg2Yjc5ZTJhODI5NjRmMDI5ZDBiMGNjNWY5YzYzOWYwMzFmOTFlODFhMTA5NjQyMzIxMTI2ZDQyMWQ4N2M0ODljNDYwNzY5YjUwMzQiLCJpYXQiOjE2MjY2NDU5MzEuNTAxNjI3LCJuYmYiOjE2MjY2NDU5MzEuNTAxNjY5LCJleHAiOjE2NTgxODE5MzEuNDI2ODg3LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.zcNEVhtK3M0BcJS1Lh2O_30O74_ceYu81GZPmW5bPB2-lK_m0qf6A0m5aPqTUN3iU_D6PgTnt6PLTc-xGEcIZQMgg-TdKOkyxBn9gJT6MnTAlOPWefFEQOdU5iAQwQheN2eRId7R15AQm1uN6uDv9JC2Ypp9HoV653WT8SuwNc1zsmJicFTEImCSIYsOTPYqLLM64jvBS6x5gOgQbFjQ2KX-8TsUVrN1pBsEFidSZAA9sPpsdp6oIIMIVS0wIEGmkuIWkJxwC1HSk3WiPQzxK8QIxvpz36tKwPt-kt7MPI5PTtjxMmkulWfvNdfzm4tlNZ8NrffKsllzdcm4vJXvPttwCFQuuhTNuDyUIz-K3t2ejuaA3DmIJeHyLhRRbV-jB0SMRmxVA1YK2R8h2skrRLclf9fWVTi288LIo4ivdGf3lC_ZqcO9pXVlnjB8xiJZdA2KkCXYOCWIChzfTJZgogH6SDq-qLI3Trj1WQjcneLYDp_M9UPkWyEFE3NBa7Zbl2XuE6hTOyqTwguWrCpa8JJM844HrQcfFfKJnG1e-fjx1s44NrpLgHX5G6EayP8iaYfhECBRkLcHz3mIWDAcslKa3bc-AR31fsXb4B62WaIi6N5V64fSNit1tqpEolZRPwHfB_ar40OPpUYW75mP7kLu0Goe3WANu9ewbsgwdCI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\" : \"3\",\r\n    \"sub_id\" : \"6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/deletesubs",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"deletesubs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all user subscriptions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTQ5ZWIxOWEyMzE5NjYwYjk4YTg0Y2VhZDQyNjBjOWE2MGEzYjQyMDAyNGMzYjJlOWMzYWRkYzUxYTg4YWUyN2IzMmZlMjZmMDU4Y2E0NWIiLCJpYXQiOjE2MjY2NDc5NjguMTc1ODIsIm5iZiI6MTYyNjY0Nzk2OC4xNzU4NjcsImV4cCI6MTY1ODE4Mzk2OC4wOTczOSwic3ViIjoiMSIsInNjb3BlcyI6W119.HPev0X8W8rmytfbZmvvHOEfZUO3cUMI5oMGh2M0XCl9AZiZHmPCdrE7sHQwMicfClZXWBy8URvxNk4lPg7XAv78ydfsb89F1xKrYnmjT1cxcGsoZfiYwfofu1jnGAjnYkmzsweNtlZ2gdRNJoNa8WcTwy4zRr6pkTDbKud3Tgs4Q-dmmNwAfjLdjWddLgIocp-KzB1hTzJup1Ykto8COgEQC1g5pE4xJG_qkc5JGffEppNlTl68xqptxzYRYizgXaL9SIfoFtCDirGf6wnx7tOkrTLlWYyBA0CqrUvbENeotphsNKFQOROugKjA7UFATKAfPAaqhL-qcwU9a2w9D9vk9B88rTy0dhqhW0JZE9zxwYNLOlHzPVAxnBUBT_GpPPDCj29P3o1y2gR6erEgYd4LgkWNIOdvCuIwVnRVJZYBT6dUkyaWIkvzuibqLhb_T6XYCOwOW58NjCqdSBYvKEoyPO2H7NazCWG2NKTlAtJUka0EGaH3eBdwDifZmbCzO3WI_RVN7s5lK1eNBtlqJ8pPrD29zV3Kf9oyfT0-HA0ymOkTXOaLTPPREeB0WzWW_vrbK_dQK4fzTuRPvuy0heutDOE1WmuvrY4kKQt13ksVNb2zp5JfbPcuDI2ZPPnYDUCbPxnri67D5XfYABhjuM3OeHoqmPC8p5Q0hz7aHMe0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/usersubs",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"usersubs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all subscriptions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGI2YzRiMGViNTc1NzkxYTZiNjAwMzliMmZiZDRlODNkY2QyNzY0ZTY2NmFkYzJhM2M5ZmE5ZGY3YWZhMTg0MmQ5MGNlMmNjMjZjM2FiNzUiLCJpYXQiOjE2MjY2NTM4NjQuMzQ2NjQyLCJuYmYiOjE2MjY2NTM4NjQuMzQ2NjgyLCJleHAiOjE2NTgxODk4NjQuMjcyMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.xMs0HoyW-gK041csSlM39zZ8oOKAosln7QkLHkglYUGMzNSw-29skyfHXLquYTijP2AVSjhOo6sCQ3lEfyX8nMiNzYPxsmNpxAuRH1G2TjmPo8ml3xjrJJeRjJVrD9TsSE0q9Fq278snkVNlSRBQI3V7ysU81W9XKghwOdcD-9_AcMzJkQP7V4msPOP30lDruVJm3G0IRDLs6FGc-kGTCQwAd6W33XH9oyk7t2LaBKgf-K1fyiUOdJIB2tVWD-_9PscF8OAW1iYlbUnUSaNn5lzPpUW645SqUIA5gHIRcKkYRGyN6DD1Rc0WfOFgm7GM1iNPPU2XRYK--xrNY5SxY6YCiry2gMjWQbUOBqnxCHNI9cJtkHktE16WCpekDRI8q0-CZJyZu_4_ulV5UHWene8UORBFv_xNZm7qp-LQPZDNa1xemOH0PLAs4Z7l_ZRWheBzEqxb3jtZ5uAqipzI3yTyPmgP91mIYqwnrKdNOp8MABccxCoLQCcFfcdZCWBGO2MmqDiMPGlU5njzYnts_kiZuni8Vcak2RX7WUjWyuwaoaHzmvTnrdPGeDfirBtynhQCSon79Gmvq3nZT3qV57kI9gGP7AwLBTYsBDxAwe-RQNJnsO_arODP5XZU-a43rrhJ_XJQHbP-fYTj_saj0ZQAMDmu4msx9chm-V89kGo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/allsubs",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"allsubs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Subscription",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGI2YzRiMGViNTc1NzkxYTZiNjAwMzliMmZiZDRlODNkY2QyNzY0ZTY2NmFkYzJhM2M5ZmE5ZGY3YWZhMTg0MmQ5MGNlMmNjMjZjM2FiNzUiLCJpYXQiOjE2MjY2NTM4NjQuMzQ2NjQyLCJuYmYiOjE2MjY2NTM4NjQuMzQ2NjgyLCJleHAiOjE2NTgxODk4NjQuMjcyMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.xMs0HoyW-gK041csSlM39zZ8oOKAosln7QkLHkglYUGMzNSw-29skyfHXLquYTijP2AVSjhOo6sCQ3lEfyX8nMiNzYPxsmNpxAuRH1G2TjmPo8ml3xjrJJeRjJVrD9TsSE0q9Fq278snkVNlSRBQI3V7ysU81W9XKghwOdcD-9_AcMzJkQP7V4msPOP30lDruVJm3G0IRDLs6FGc-kGTCQwAd6W33XH9oyk7t2LaBKgf-K1fyiUOdJIB2tVWD-_9PscF8OAW1iYlbUnUSaNn5lzPpUW645SqUIA5gHIRcKkYRGyN6DD1Rc0WfOFgm7GM1iNPPU2XRYK--xrNY5SxY6YCiry2gMjWQbUOBqnxCHNI9cJtkHktE16WCpekDRI8q0-CZJyZu_4_ulV5UHWene8UORBFv_xNZm7qp-LQPZDNa1xemOH0PLAs4Z7l_ZRWheBzEqxb3jtZ5uAqipzI3yTyPmgP91mIYqwnrKdNOp8MABccxCoLQCcFfcdZCWBGO2MmqDiMPGlU5njzYnts_kiZuni8Vcak2RX7WUjWyuwaoaHzmvTnrdPGeDfirBtynhQCSon79Gmvq3nZT3qV57kI9gGP7AwLBTYsBDxAwe-RQNJnsO_arODP5XZU-a43rrhJ_XJQHbP-fYTj_saj0ZQAMDmu4msx9chm-V89kGo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"party_id\" : \"2\",\r\n    \"user_id\" : \"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/createsubs",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"createsubs"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "CommentController",
+					"item": [
+						{
+							"name": "Delete Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGI2YzRiMGViNTc1NzkxYTZiNjAwMzliMmZiZDRlODNkY2QyNzY0ZTY2NmFkYzJhM2M5ZmE5ZGY3YWZhMTg0MmQ5MGNlMmNjMjZjM2FiNzUiLCJpYXQiOjE2MjY2NTM4NjQuMzQ2NjQyLCJuYmYiOjE2MjY2NTM4NjQuMzQ2NjgyLCJleHAiOjE2NTgxODk4NjQuMjcyMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.xMs0HoyW-gK041csSlM39zZ8oOKAosln7QkLHkglYUGMzNSw-29skyfHXLquYTijP2AVSjhOo6sCQ3lEfyX8nMiNzYPxsmNpxAuRH1G2TjmPo8ml3xjrJJeRjJVrD9TsSE0q9Fq278snkVNlSRBQI3V7ysU81W9XKghwOdcD-9_AcMzJkQP7V4msPOP30lDruVJm3G0IRDLs6FGc-kGTCQwAd6W33XH9oyk7t2LaBKgf-K1fyiUOdJIB2tVWD-_9PscF8OAW1iYlbUnUSaNn5lzPpUW645SqUIA5gHIRcKkYRGyN6DD1Rc0WfOFgm7GM1iNPPU2XRYK--xrNY5SxY6YCiry2gMjWQbUOBqnxCHNI9cJtkHktE16WCpekDRI8q0-CZJyZu_4_ulV5UHWene8UORBFv_xNZm7qp-LQPZDNa1xemOH0PLAs4Z7l_ZRWheBzEqxb3jtZ5uAqipzI3yTyPmgP91mIYqwnrKdNOp8MABccxCoLQCcFfcdZCWBGO2MmqDiMPGlU5njzYnts_kiZuni8Vcak2RX7WUjWyuwaoaHzmvTnrdPGeDfirBtynhQCSon79Gmvq3nZT3qV57kI9gGP7AwLBTYsBDxAwe-RQNJnsO_arODP5XZU-a43rrhJ_XJQHbP-fYTj_saj0ZQAMDmu4msx9chm-V89kGo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\" : \"1\",\r\n    \"party_id\" : \"1\",\r\n    \"comment_id\" : \"4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/deletecomment",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"deletecomment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all party comments",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDhkYjllMjgxNTc2OTMyYzE1YzMyYTI1ZGRmYTU2ZWU3NDViYjZkYmYzY2JjZmFkMWUxZjI3Nzk1MzcxZWI3MjFlODdlZWZiZDJkZWJlNDQiLCJpYXQiOjE2MjY2NTYzOTEuNjg3ODEzLCJuYmYiOjE2MjY2NTYzOTEuNjg3OTM2LCJleHAiOjE2NTgxOTIzOTEuNjAxNzM1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.w5KXeLQEq9xIUe8k2aq6ER0tcjwLUFWtHgRWNPs29LCI8gA2Aajl9K9_Aj2wbj0SuVpHxeoO45ebKGe2HLhhcyGulcl6pG0Mn5nO1_xKiPz2Dbw5MyEtDRGf36QhWEwo0uYKP6GBm-tPvz67YaHo5Kj5xgypP_xzAlgSKpUTHgmgChwt9af-0SOP5_Zgx3wzZYAtpRBf6fiE9POaxbX5e_lB15ObGNgDP3rOsvscnlNmbTVIcmW5mVFi6S_7E7mVhjyQlEZwVzWlwsTcF73TMR6k3on2P6r9QaHeIa6ey6GMVYOKXgSDSj_iAsp1jLjtJpGCaHSg2SSro_xC6E8DXhlesak2fzJwkzcNwxVzHWzHq3LDVHA-ZCY3SiQdAoo8evgx9pjDmttwnVTahlH9hMjulEr0xGKjvqXQAvDpnXEZxMV5LkcDolO4XdFQ4zb25Lr8gm_w8uxM5VuYV_XYTeAqwQxUwxNOhqvZtCanbKMW-qwsw3WvA15reOQ692TcXHaks79NZXuJPQctI8iGsw5TJA78acJs4NYoXrdNFUrE2y7gAHF_iTdP8vBFNbhJeMNQoo1s-eAh9ENDp3ZlhPu8Qcsd1I8gar1meksr8V64LrqRVSnUcxNmBi6AEkMHXRvxa7fBtdEN8ULJZxKXL4glRiRYiiuGgnpAMoHFsF4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"party_id\" : \"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/partycomments",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"partycomments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all coments",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDhkYjllMjgxNTc2OTMyYzE1YzMyYTI1ZGRmYTU2ZWU3NDViYjZkYmYzY2JjZmFkMWUxZjI3Nzk1MzcxZWI3MjFlODdlZWZiZDJkZWJlNDQiLCJpYXQiOjE2MjY2NTYzOTEuNjg3ODEzLCJuYmYiOjE2MjY2NTYzOTEuNjg3OTM2LCJleHAiOjE2NTgxOTIzOTEuNjAxNzM1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.w5KXeLQEq9xIUe8k2aq6ER0tcjwLUFWtHgRWNPs29LCI8gA2Aajl9K9_Aj2wbj0SuVpHxeoO45ebKGe2HLhhcyGulcl6pG0Mn5nO1_xKiPz2Dbw5MyEtDRGf36QhWEwo0uYKP6GBm-tPvz67YaHo5Kj5xgypP_xzAlgSKpUTHgmgChwt9af-0SOP5_Zgx3wzZYAtpRBf6fiE9POaxbX5e_lB15ObGNgDP3rOsvscnlNmbTVIcmW5mVFi6S_7E7mVhjyQlEZwVzWlwsTcF73TMR6k3on2P6r9QaHeIa6ey6GMVYOKXgSDSj_iAsp1jLjtJpGCaHSg2SSro_xC6E8DXhlesak2fzJwkzcNwxVzHWzHq3LDVHA-ZCY3SiQdAoo8evgx9pjDmttwnVTahlH9hMjulEr0xGKjvqXQAvDpnXEZxMV5LkcDolO4XdFQ4zb25Lr8gm_w8uxM5VuYV_XYTeAqwQxUwxNOhqvZtCanbKMW-qwsw3WvA15reOQ692TcXHaks79NZXuJPQctI8iGsw5TJA78acJs4NYoXrdNFUrE2y7gAHF_iTdP8vBFNbhJeMNQoo1s-eAh9ENDp3ZlhPu8Qcsd1I8gar1meksr8V64LrqRVSnUcxNmBi6AEkMHXRvxa7fBtdEN8ULJZxKXL4glRiRYiiuGgnpAMoHFsF4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/allcomments",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"allcomments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDhkYjllMjgxNTc2OTMyYzE1YzMyYTI1ZGRmYTU2ZWU3NDViYjZkYmYzY2JjZmFkMWUxZjI3Nzk1MzcxZWI3MjFlODdlZWZiZDJkZWJlNDQiLCJpYXQiOjE2MjY2NTYzOTEuNjg3ODEzLCJuYmYiOjE2MjY2NTYzOTEuNjg3OTM2LCJleHAiOjE2NTgxOTIzOTEuNjAxNzM1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.w5KXeLQEq9xIUe8k2aq6ER0tcjwLUFWtHgRWNPs29LCI8gA2Aajl9K9_Aj2wbj0SuVpHxeoO45ebKGe2HLhhcyGulcl6pG0Mn5nO1_xKiPz2Dbw5MyEtDRGf36QhWEwo0uYKP6GBm-tPvz67YaHo5Kj5xgypP_xzAlgSKpUTHgmgChwt9af-0SOP5_Zgx3wzZYAtpRBf6fiE9POaxbX5e_lB15ObGNgDP3rOsvscnlNmbTVIcmW5mVFi6S_7E7mVhjyQlEZwVzWlwsTcF73TMR6k3on2P6r9QaHeIa6ey6GMVYOKXgSDSj_iAsp1jLjtJpGCaHSg2SSro_xC6E8DXhlesak2fzJwkzcNwxVzHWzHq3LDVHA-ZCY3SiQdAoo8evgx9pjDmttwnVTahlH9hMjulEr0xGKjvqXQAvDpnXEZxMV5LkcDolO4XdFQ4zb25Lr8gm_w8uxM5VuYV_XYTeAqwQxUwxNOhqvZtCanbKMW-qwsw3WvA15reOQ692TcXHaks79NZXuJPQctI8iGsw5TJA78acJs4NYoXrdNFUrE2y7gAHF_iTdP8vBFNbhJeMNQoo1s-eAh9ENDp3ZlhPu8Qcsd1I8gar1meksr8V64LrqRVSnUcxNmBi6AEkMHXRvxa7fBtdEN8ULJZxKXL4glRiRYiiuGgnpAMoHFsF4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\" : \"Esto lo escribe mariana en la Mario party\",\r\n    \"party_id\" : \"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/createcomment",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"createcomment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDhkYjllMjgxNTc2OTMyYzE1YzMyYTI1ZGRmYTU2ZWU3NDViYjZkYmYzY2JjZmFkMWUxZjI3Nzk1MzcxZWI3MjFlODdlZWZiZDJkZWJlNDQiLCJpYXQiOjE2MjY2NTYzOTEuNjg3ODEzLCJuYmYiOjE2MjY2NTYzOTEuNjg3OTM2LCJleHAiOjE2NTgxOTIzOTEuNjAxNzM1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.w5KXeLQEq9xIUe8k2aq6ER0tcjwLUFWtHgRWNPs29LCI8gA2Aajl9K9_Aj2wbj0SuVpHxeoO45ebKGe2HLhhcyGulcl6pG0Mn5nO1_xKiPz2Dbw5MyEtDRGf36QhWEwo0uYKP6GBm-tPvz67YaHo5Kj5xgypP_xzAlgSKpUTHgmgChwt9af-0SOP5_Zgx3wzZYAtpRBf6fiE9POaxbX5e_lB15ObGNgDP3rOsvscnlNmbTVIcmW5mVFi6S_7E7mVhjyQlEZwVzWlwsTcF73TMR6k3on2P6r9QaHeIa6ey6GMVYOKXgSDSj_iAsp1jLjtJpGCaHSg2SSro_xC6E8DXhlesak2fzJwkzcNwxVzHWzHq3LDVHA-ZCY3SiQdAoo8evgx9pjDmttwnVTahlH9hMjulEr0xGKjvqXQAvDpnXEZxMV5LkcDolO4XdFQ4zb25Lr8gm_w8uxM5VuYV_XYTeAqwQxUwxNOhqvZtCanbKMW-qwsw3WvA15reOQ692TcXHaks79NZXuJPQctI8iGsw5TJA78acJs4NYoXrdNFUrE2y7gAHF_iTdP8vBFNbhJeMNQoo1s-eAh9ENDp3ZlhPu8Qcsd1I8gar1meksr8V64LrqRVSnUcxNmBi6AEkMHXRvxa7fBtdEN8ULJZxKXL4glRiRYiiuGgnpAMoHFsF4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\" : \"blablablabla\",\r\n    \"party_id\" : \"1\",\r\n    \"user_id\" : \"2\",\r\n    \"comment_id\" : \"8\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/modifycomment",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"modifycomment"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Heroku Test",
+			"item": [
+				{
+					"name": "Register/Login",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "userName",
+											"value": "Federico",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "fede@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/register",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "fede@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/login",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GameController",
+					"item": [
+						{
+							"name": "Create Game",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTM0MjMwNDMwMGNjYTZmNzM2ZWZjN2VhOTdkNGUzNWU4MWEzZWU1ZWQxNTUzZGM3NWQ5NjMyMDM2ZjdlZmQzYWZiZjk0MzU1NGIxOTc4ZTMiLCJpYXQiOjE2MjY2NzQ1MjUuMTU0MTEyLCJuYmYiOjE2MjY2NzQ1MjUuMTU0MTE1LCJleHAiOjE2NTgyMTA1MjUuMTQ3Nzg0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.fmR7zbWrbkEQUWz8vIsDCOZiMwfxuH6BOi5WT_3WMGCx8WqtozmFkNiNYatPg9innnO3ACdL2dEad7RCEzX_5j3cksSJ9NlyfSqUmwmYw6KeGu806GfTi-W1PvC5CzdGe0W36dB4Q17LbbxyNkp2xDAeKhYslwgKdbBZ6mcQLzVKIwiFjHexgaKeKSel3TEU1HLnLXqYWybSgVfP7IgCuNbqe3hLMo8HPqXBQbEpnCuOtTF2QLkc8URNN7xwAU_bn76RBV3rwbyU8inz9p7Xa5R3O7pbK0F9R8chRKfLTLdyTitQ4Db8LJuUALCIrx8hYJiCYYfSgB_QdN1FlwNyL6WYXQTmA30zZWJiGb6RQ1dAhsTHpUzPRQcV2uQAvZectGKIsPdViP1Q_RBE3-y56QRa6bxLTwHnab7o7Ae9DHPheBGACyIl5OEFhAElmujtkY8U6RsW2hVujHcLarMKCIrN4SQ-A1C_14wazT9VWJwMSVGHOIdDf3l0ex303ELh6mzMy_0yDXOQiWFXo040fmE4IHWtkHMACCuluFa2gkMqtUNSPA1p_e30yALi7JtXeJ6gmpzoeDZHUoDtpvy5sGJdf3ZV--d7ivwxJ-jJx4cwXxYABRXCF8gY7kbSavKp48tmXeuDEOSP1os-o0k-Nf0J9ADQG0RxVSQNYOXSWJw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gameTitle\" : \"Diablo 2\",\r\n    \"thumbnail_url\" : \"vfighter.jpg\",\r\n    \"url\": \"virtuafighter.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/addgame",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"addgame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify Game",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmI4N2UzZWM5ZjQyZTdjOWI5MTE0YWVjMmY3ZjYzMTg5NjdlMzg3ODZhYmEyNzAwMTQ2NjZkYjA4NzlmMDk5MmQxMjZlMjU0M2EyOGI1YjEiLCJpYXQiOjE2MjY2MDg4NTcuNDk1NTI3LCJuYmYiOjE2MjY2MDg4NTcuNDk1NTY3LCJleHAiOjE2NTgxNDQ4NTcuNDI1MDAzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.HS7h_dFZxuqVbNMkd7T281vMr74S5EQb-d-TMMWL5dmnotamN5DTvRHfiCvySEDnRXJaqFsCOIQVDEHqbBAkiAnoTG9XkvH-J1QbNqfHGF8qiOX4-ci0l_U6HFRHwONGlPG83nf2tsE2TP5g2jS3LcgkFrXKOtqoTKTOYfX7mCMO1-vuQnfYuD5IJBe6dA83rEE_rdsG_45FeejLrx84acO7GGQSx_PWeJv73WdHxznVmRjKV3F4JtKO3zhE5XZpTMfYeIIklbeX4CPKls5Yim3OeyVOV0sA1c1X0wJxg-UUXnn4v6CCQcuXciH1ocP4VlFS-owlS2j4a8SMox9SGlbtdzYO7txl-OACIpRxVtpnlMBmC74cA7H7KLtGF_SVnr7Qxk4nVAinyCIXo6cQcuguIwVLM6HKY6fDCX3iO0PwwrUGKaACntMk5onwZyRkp6wB8dGtwZDbtaHL2Ckfu75Gp7ZhdxjRswXvnVzbO-6127yp2q_oy5CiV5zi_gJiA8Ffo3Y-bDUG_LSa_EV7VlYWOMZErEdRRVIQe7v4nhW8hUdy2MKKLUF-QGwOjoSIx_-9caZm6OX8XooOc3ZVaRNjAVdBBTAaydiXQwG79iO7S9y9wzoXAX0vfTRFtBdG8kFQ9jHiIa02DYP31eKtVrV9kzd8r0yEZ9fLoCP_GHM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"game_id\" : \"2\",\r\n    \"gameTitle\" : \"Perros vigilantes\",\r\n    \"thumbnail_url\" : \"Chasco\",\r\n    \"url\": \"perrosv.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/modifygame",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"modifygame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Game",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmI4N2UzZWM5ZjQyZTdjOWI5MTE0YWVjMmY3ZjYzMTg5NjdlMzg3ODZhYmEyNzAwMTQ2NjZkYjA4NzlmMDk5MmQxMjZlMjU0M2EyOGI1YjEiLCJpYXQiOjE2MjY2MDg4NTcuNDk1NTI3LCJuYmYiOjE2MjY2MDg4NTcuNDk1NTY3LCJleHAiOjE2NTgxNDQ4NTcuNDI1MDAzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.HS7h_dFZxuqVbNMkd7T281vMr74S5EQb-d-TMMWL5dmnotamN5DTvRHfiCvySEDnRXJaqFsCOIQVDEHqbBAkiAnoTG9XkvH-J1QbNqfHGF8qiOX4-ci0l_U6HFRHwONGlPG83nf2tsE2TP5g2jS3LcgkFrXKOtqoTKTOYfX7mCMO1-vuQnfYuD5IJBe6dA83rEE_rdsG_45FeejLrx84acO7GGQSx_PWeJv73WdHxznVmRjKV3F4JtKO3zhE5XZpTMfYeIIklbeX4CPKls5Yim3OeyVOV0sA1c1X0wJxg-UUXnn4v6CCQcuXciH1ocP4VlFS-owlS2j4a8SMox9SGlbtdzYO7txl-OACIpRxVtpnlMBmC74cA7H7KLtGF_SVnr7Qxk4nVAinyCIXo6cQcuguIwVLM6HKY6fDCX3iO0PwwrUGKaACntMk5onwZyRkp6wB8dGtwZDbtaHL2Ckfu75Gp7ZhdxjRswXvnVzbO-6127yp2q_oy5CiV5zi_gJiA8Ffo3Y-bDUG_LSa_EV7VlYWOMZErEdRRVIQe7v4nhW8hUdy2MKKLUF-QGwOjoSIx_-9caZm6OX8XooOc3ZVaRNjAVdBBTAaydiXQwG79iO7S9y9wzoXAX0vfTRFtBdG8kFQ9jHiIa02DYP31eKtVrV9kzd8r0yEZ9fLoCP_GHM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"game_id\" : \"5\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/deletegame",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"deletegame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Archive Game",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmI4N2UzZWM5ZjQyZTdjOWI5MTE0YWVjMmY3ZjYzMTg5NjdlMzg3ODZhYmEyNzAwMTQ2NjZkYjA4NzlmMDk5MmQxMjZlMjU0M2EyOGI1YjEiLCJpYXQiOjE2MjY2MDg4NTcuNDk1NTI3LCJuYmYiOjE2MjY2MDg4NTcuNDk1NTY3LCJleHAiOjE2NTgxNDQ4NTcuNDI1MDAzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.HS7h_dFZxuqVbNMkd7T281vMr74S5EQb-d-TMMWL5dmnotamN5DTvRHfiCvySEDnRXJaqFsCOIQVDEHqbBAkiAnoTG9XkvH-J1QbNqfHGF8qiOX4-ci0l_U6HFRHwONGlPG83nf2tsE2TP5g2jS3LcgkFrXKOtqoTKTOYfX7mCMO1-vuQnfYuD5IJBe6dA83rEE_rdsG_45FeejLrx84acO7GGQSx_PWeJv73WdHxznVmRjKV3F4JtKO3zhE5XZpTMfYeIIklbeX4CPKls5Yim3OeyVOV0sA1c1X0wJxg-UUXnn4v6CCQcuXciH1ocP4VlFS-owlS2j4a8SMox9SGlbtdzYO7txl-OACIpRxVtpnlMBmC74cA7H7KLtGF_SVnr7Qxk4nVAinyCIXo6cQcuguIwVLM6HKY6fDCX3iO0PwwrUGKaACntMk5onwZyRkp6wB8dGtwZDbtaHL2Ckfu75Gp7ZhdxjRswXvnVzbO-6127yp2q_oy5CiV5zi_gJiA8Ffo3Y-bDUG_LSa_EV7VlYWOMZErEdRRVIQe7v4nhW8hUdy2MKKLUF-QGwOjoSIx_-9caZm6OX8XooOc3ZVaRNjAVdBBTAaydiXQwG79iO7S9y9wzoXAX0vfTRFtBdG8kFQ9jHiIa02DYP31eKtVrV9kzd8r0yEZ9fLoCP_GHM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"game_id\" : \"5\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/archivegame",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"archivegame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Choose game byId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmI4N2UzZWM5ZjQyZTdjOWI5MTE0YWVjMmY3ZjYzMTg5NjdlMzg3ODZhYmEyNzAwMTQ2NjZkYjA4NzlmMDk5MmQxMjZlMjU0M2EyOGI1YjEiLCJpYXQiOjE2MjY2MDg4NTcuNDk1NTI3LCJuYmYiOjE2MjY2MDg4NTcuNDk1NTY3LCJleHAiOjE2NTgxNDQ4NTcuNDI1MDAzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.HS7h_dFZxuqVbNMkd7T281vMr74S5EQb-d-TMMWL5dmnotamN5DTvRHfiCvySEDnRXJaqFsCOIQVDEHqbBAkiAnoTG9XkvH-J1QbNqfHGF8qiOX4-ci0l_U6HFRHwONGlPG83nf2tsE2TP5g2jS3LcgkFrXKOtqoTKTOYfX7mCMO1-vuQnfYuD5IJBe6dA83rEE_rdsG_45FeejLrx84acO7GGQSx_PWeJv73WdHxznVmRjKV3F4JtKO3zhE5XZpTMfYeIIklbeX4CPKls5Yim3OeyVOV0sA1c1X0wJxg-UUXnn4v6CCQcuXciH1ocP4VlFS-owlS2j4a8SMox9SGlbtdzYO7txl-OACIpRxVtpnlMBmC74cA7H7KLtGF_SVnr7Qxk4nVAinyCIXo6cQcuguIwVLM6HKY6fDCX3iO0PwwrUGKaACntMk5onwZyRkp6wB8dGtwZDbtaHL2Ckfu75Gp7ZhdxjRswXvnVzbO-6127yp2q_oy5CiV5zi_gJiA8Ffo3Y-bDUG_LSa_EV7VlYWOMZErEdRRVIQe7v4nhW8hUdy2MKKLUF-QGwOjoSIx_-9caZm6OX8XooOc3ZVaRNjAVdBBTAaydiXQwG79iO7S9y9wzoXAX0vfTRFtBdG8kFQ9jHiIa02DYP31eKtVrV9kzd8r0yEZ9fLoCP_GHM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"game_id\" : \"3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/choosegame",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"choosegame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Game by gameTitle",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTNkYTZlZmJiMGUwYTJhNzE4OTg1YWMwOGI0YzgzNjA5ODAxMDY5ODQ5NjU0MWVkYWM1NTAzNzEyOGY0MWZmY2Y2ZmI5ZDliOTM4MDZiYTkiLCJpYXQiOjE2MjY2MjczOTkuNTAzMDM3LCJuYmYiOjE2MjY2MjczOTkuNTAzMTI1LCJleHAiOjE2NTgxNjMzOTkuNDA0OTMyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QlcUcZcB3QxBVPioRMbI2roHKlB_CuuJCXKf_Db-hHeARBrqB55uQS0jJNE-aQNWg9mgxbMaBrGmcGVVfQFPqsUQjW4ZoVBFpAPRlxmWtX_r0RnesSOR5pF5TNk02GonkGkDoxu8UXH6FCdwPqOUM1EKnP3WT_eCz1A3RDRyiemH-COYAj-IZ4SF5kzE2VbDmLRXmDamHTH0vzaVL0YAY5si8AZY1l6dy76Jt3qPZB-EvyTS0yuyBI3H-_QW7zfX88-ScWZY4_Tl5JODShjKcuSlXm6AuddfXD7Qqav2RoBIaE4xt9EAIgdpmhmFCeq7AwQI5KBxVK2roCy17Rw65hzXMYSLuUQDy-oNaau8lxvl_oOtKAWSEs8919CXiw7PaX9YYzmwuGHFOjZ-I4CdN-61_fM51XFle-Ma69yrVYuXegBA-izUbsSQoI3i8CXPVPdDi5UszhA9_tscemPkSgD-COKTv_-uDhMI7PQLV1B_N6H0RxDkww6G4c5gZgUUF-TCPJDeeh9WurHCbODIXcjYidfFDFtrFn3jbMai3M3iQIRbfrS0_LDNO4St8f_xlJKH3CNqnhp6_9n30s3nzRqff0hvpdOTXj0apYc9tE17asSpji5HqeINgIMRly-MZDjcYYfwlB8fBWtAYpJL3_ZvM3cVO-0qBuZb3jypnbw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gameTitle\" : \"Metal\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/findgame",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"findgame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Select Game by gameTitle",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTNkYTZlZmJiMGUwYTJhNzE4OTg1YWMwOGI0YzgzNjA5ODAxMDY5ODQ5NjU0MWVkYWM1NTAzNzEyOGY0MWZmY2Y2ZmI5ZDliOTM4MDZiYTkiLCJpYXQiOjE2MjY2MjczOTkuNTAzMDM3LCJuYmYiOjE2MjY2MjczOTkuNTAzMTI1LCJleHAiOjE2NTgxNjMzOTkuNDA0OTMyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QlcUcZcB3QxBVPioRMbI2roHKlB_CuuJCXKf_Db-hHeARBrqB55uQS0jJNE-aQNWg9mgxbMaBrGmcGVVfQFPqsUQjW4ZoVBFpAPRlxmWtX_r0RnesSOR5pF5TNk02GonkGkDoxu8UXH6FCdwPqOUM1EKnP3WT_eCz1A3RDRyiemH-COYAj-IZ4SF5kzE2VbDmLRXmDamHTH0vzaVL0YAY5si8AZY1l6dy76Jt3qPZB-EvyTS0yuyBI3H-_QW7zfX88-ScWZY4_Tl5JODShjKcuSlXm6AuddfXD7Qqav2RoBIaE4xt9EAIgdpmhmFCeq7AwQI5KBxVK2roCy17Rw65hzXMYSLuUQDy-oNaau8lxvl_oOtKAWSEs8919CXiw7PaX9YYzmwuGHFOjZ-I4CdN-61_fM51XFle-Ma69yrVYuXegBA-izUbsSQoI3i8CXPVPdDi5UszhA9_tscemPkSgD-COKTv_-uDhMI7PQLV1B_N6H0RxDkww6G4c5gZgUUF-TCPJDeeh9WurHCbODIXcjYidfFDFtrFn3jbMai3M3iQIRbfrS0_LDNO4St8f_xlJKH3CNqnhp6_9n30s3nzRqff0hvpdOTXj0apYc9tE17asSpji5HqeINgIMRly-MZDjcYYfwlB8fBWtAYpJL3_ZvM3cVO-0qBuZb3jypnbw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gameTitle\" : \"Metal\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/selectgame",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"selectgame"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all games",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTM0MjMwNDMwMGNjYTZmNzM2ZWZjN2VhOTdkNGUzNWU4MWEzZWU1ZWQxNTUzZGM3NWQ5NjMyMDM2ZjdlZmQzYWZiZjk0MzU1NGIxOTc4ZTMiLCJpYXQiOjE2MjY2NzQ1MjUuMTU0MTEyLCJuYmYiOjE2MjY2NzQ1MjUuMTU0MTE1LCJleHAiOjE2NTgyMTA1MjUuMTQ3Nzg0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.fmR7zbWrbkEQUWz8vIsDCOZiMwfxuH6BOi5WT_3WMGCx8WqtozmFkNiNYatPg9innnO3ACdL2dEad7RCEzX_5j3cksSJ9NlyfSqUmwmYw6KeGu806GfTi-W1PvC5CzdGe0W36dB4Q17LbbxyNkp2xDAeKhYslwgKdbBZ6mcQLzVKIwiFjHexgaKeKSel3TEU1HLnLXqYWybSgVfP7IgCuNbqe3hLMo8HPqXBQbEpnCuOtTF2QLkc8URNN7xwAU_bn76RBV3rwbyU8inz9p7Xa5R3O7pbK0F9R8chRKfLTLdyTitQ4Db8LJuUALCIrx8hYJiCYYfSgB_QdN1FlwNyL6WYXQTmA30zZWJiGb6RQ1dAhsTHpUzPRQcV2uQAvZectGKIsPdViP1Q_RBE3-y56QRa6bxLTwHnab7o7Ae9DHPheBGACyIl5OEFhAElmujtkY8U6RsW2hVujHcLarMKCIrN4SQ-A1C_14wazT9VWJwMSVGHOIdDf3l0ex303ELh6mzMy_0yDXOQiWFXo040fmE4IHWtkHMACCuluFa2gkMqtUNSPA1p_e30yALi7JtXeJ6gmpzoeDZHUoDtpvy5sGJdf3ZV--d7ivwxJ-jJx4cwXxYABRXCF8gY7kbSavKp48tmXeuDEOSP1os-o0k-Nf0J9ADQG0RxVSQNYOXSWJw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/allgames",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"allgames"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find active games",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "data:image/jpeg;base64,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",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gameTitle\" : \"God of war\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/activegames",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"activegames"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UserController",
+					"item": [
+						{
+							"name": "Modify User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMmUyNTI1YzlkZDE4YTVhNmM3YzRmM2IxMDc5YTNhYjVjYjYxZGQwNTU4MzkxMmM3OTUzNmI3OTVmOGFmNTdjNzFlMzAzYjdkZTc4Y2JhYmUiLCJpYXQiOjE2MjY2MjU1MDguNjc2NDI0LCJuYmYiOjE2MjY2MjU1MDguNjc2NTExLCJleHAiOjE2NTgxNjE1MDguNTk3Mjg2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.NocLyd76cOJFXGGkTcYZTMegFJ8QhnvRTdX9qfuXXjrpJKiP4WG4QT-4krlbIT5b14PAiP7v99doecqYP0kZNcD4ak7RBJyGY0_BMOupm2fjr1KRpQ7k80b8P3lq8ARbyqXjIMeBLTRGCeDTl8K2DnKwW3Uj_qwmlt69lMzwHWzCvkU1qkjEpSl60dNZaclV2Oq6a7u3cHdEnm5eilaD5oY25I_HCXk3yc-48wP6sLxWHOCBqO2XXLvGpXx4H0kvy8HREvbhSDLh0kwjpnEuPlTES3Ao-DXwkUAvR9pQrsPysgr5MHTvQESN54KwjKvL5untyRFktJYy4-q_e5gw6cv_csdwYLbFyZnz2xayDqLSpQKyMfqhgRRgwXEs_IO116KQXGCF2LlJJw4ROEa3XQFaSYmGuMGOcZrdrzTRXxr_2zPfF5xer8CQYEfz5MWihcBLfSRkGBbDhGkVElU9I7rbrJpodXVdqwAovWFcgE45ysjAXbSI0YG0n3AC0-c3H0uKc-3GrbtyJjigE1fPGZSf3YtIrHM1bxTMdN0yYE65-HjmS3nhxmBTRcb2x1BO9qY6Tjd2f8i5MX1Bvm4Pw-71xF1fvUBcHN_AIAXI1t5IvW-vdSJjQlwlyC9gyagqgFQR69xhuXt17PEFtqS8YoEqc7nJ5uxpMXQdSzuvSWQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\" : \"3\",\r\n    \"epic_id\" : \"jkldsf\",\r\n    \"steam_id\" : \"todos\",\r\n    \"blizzard_id\": \"moriran\",\r\n    \"password\" : \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/modifyuser",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"modifyuser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTRkZTJhOWQ3ZWI5MDY3MzQyYjkzYTViOTM1YWQ1MDcxMTM3MTE3M2I1MDQ4MTQwZThiODNjZmJhYmJkOTc2NTM5Y2M3ZTkwY2JlMWI2NWEiLCJpYXQiOjE2MjY2MTk3NjcuMjEzMTk3LCJuYmYiOjE2MjY2MTk3NjcuMjEzMjM1LCJleHAiOjE2NTgxNTU3NjcuMTI1OTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.l2JVLXIQChVhpfqkcevSAzyFVsRA75tJq_oC8-9JTqSr8FEfAR7RmV_8bkXuTQunjj4Fq73TklMJh54QBXonxQFHmmd29lZoVxTx8m66gALG06k3GRrDta02Y7FsWicFGz8H6nvaEyXMtrMO0urSak8PMacIYAMT4leYFgBG9iIwaOI60ecR4PWYm7w2ukJAxVURNUOPiWjcF1ZFNPlhqCec5v9ZYNmZ6MSZaC0iwIqINY8p2RmYhdQB5ZGvCaHS7l8LmjZt6icCtlXzIGzMWqYdIrfNTJePAh6g7PHH1LO6HHK-eyfufH7vprNkxJjGvBBKTCHXrJS3ui2ta3Hf3zbSyBXyUxFcfXXPkLEHi1RsNm0iZhSgsikc54WNg0caXcYO_Gku478w2e7h5VCxRf25Ob06LwTUWHFM0DwrLOQqozl2rCbYiTNrDiBxVNCXeEXjuUdD9G-l-73sjD0a2CBrX9x70N_L7CKRcT9LNXiBl1ovEmOePO8kqX7kVpFwICdXlKWU-y3XKkaoYeKoIRuTwtqRAebrk-MlsVXM6MxuD2d_GXSm2xGv7h59FYH5z4ArD2J20njGOpPYa6PbdcunI1Am9XdzG4eysrU88bhy5Ar39IBIJJ2mFmw3bfeb2kcZVkcvmp9pBcjX3javXomAOxfh8j7m7ipY-N_htsA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\" : \"4\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/deleteuser",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"deleteuser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Archive User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTRkZTJhOWQ3ZWI5MDY3MzQyYjkzYTViOTM1YWQ1MDcxMTM3MTE3M2I1MDQ4MTQwZThiODNjZmJhYmJkOTc2NTM5Y2M3ZTkwY2JlMWI2NWEiLCJpYXQiOjE2MjY2MTk3NjcuMjEzMTk3LCJuYmYiOjE2MjY2MTk3NjcuMjEzMjM1LCJleHAiOjE2NTgxNTU3NjcuMTI1OTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.l2JVLXIQChVhpfqkcevSAzyFVsRA75tJq_oC8-9JTqSr8FEfAR7RmV_8bkXuTQunjj4Fq73TklMJh54QBXonxQFHmmd29lZoVxTx8m66gALG06k3GRrDta02Y7FsWicFGz8H6nvaEyXMtrMO0urSak8PMacIYAMT4leYFgBG9iIwaOI60ecR4PWYm7w2ukJAxVURNUOPiWjcF1ZFNPlhqCec5v9ZYNmZ6MSZaC0iwIqINY8p2RmYhdQB5ZGvCaHS7l8LmjZt6icCtlXzIGzMWqYdIrfNTJePAh6g7PHH1LO6HHK-eyfufH7vprNkxJjGvBBKTCHXrJS3ui2ta3Hf3zbSyBXyUxFcfXXPkLEHi1RsNm0iZhSgsikc54WNg0caXcYO_Gku478w2e7h5VCxRf25Ob06LwTUWHFM0DwrLOQqozl2rCbYiTNrDiBxVNCXeEXjuUdD9G-l-73sjD0a2CBrX9x70N_L7CKRcT9LNXiBl1ovEmOePO8kqX7kVpFwICdXlKWU-y3XKkaoYeKoIRuTwtqRAebrk-MlsVXM6MxuD2d_GXSm2xGv7h59FYH5z4ArD2J20njGOpPYa6PbdcunI1Am9XdzG4eysrU88bhy5Ar39IBIJJ2mFmw3bfeb2kcZVkcvmp9pBcjX3javXomAOxfh8j7m7ipY-N_htsA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\" : \"1\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/archiveuser",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"archiveuser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Choose User byId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTRkZTJhOWQ3ZWI5MDY3MzQyYjkzYTViOTM1YWQ1MDcxMTM3MTE3M2I1MDQ4MTQwZThiODNjZmJhYmJkOTc2NTM5Y2M3ZTkwY2JlMWI2NWEiLCJpYXQiOjE2MjY2MTk3NjcuMjEzMTk3LCJuYmYiOjE2MjY2MTk3NjcuMjEzMjM1LCJleHAiOjE2NTgxNTU3NjcuMTI1OTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.l2JVLXIQChVhpfqkcevSAzyFVsRA75tJq_oC8-9JTqSr8FEfAR7RmV_8bkXuTQunjj4Fq73TklMJh54QBXonxQFHmmd29lZoVxTx8m66gALG06k3GRrDta02Y7FsWicFGz8H6nvaEyXMtrMO0urSak8PMacIYAMT4leYFgBG9iIwaOI60ecR4PWYm7w2ukJAxVURNUOPiWjcF1ZFNPlhqCec5v9ZYNmZ6MSZaC0iwIqINY8p2RmYhdQB5ZGvCaHS7l8LmjZt6icCtlXzIGzMWqYdIrfNTJePAh6g7PHH1LO6HHK-eyfufH7vprNkxJjGvBBKTCHXrJS3ui2ta3Hf3zbSyBXyUxFcfXXPkLEHi1RsNm0iZhSgsikc54WNg0caXcYO_Gku478w2e7h5VCxRf25Ob06LwTUWHFM0DwrLOQqozl2rCbYiTNrDiBxVNCXeEXjuUdD9G-l-73sjD0a2CBrX9x70N_L7CKRcT9LNXiBl1ovEmOePO8kqX7kVpFwICdXlKWU-y3XKkaoYeKoIRuTwtqRAebrk-MlsVXM6MxuD2d_GXSm2xGv7h59FYH5z4ArD2J20njGOpPYa6PbdcunI1Am9XdzG4eysrU88bhy5Ar39IBIJJ2mFmw3bfeb2kcZVkcvmp9pBcjX3javXomAOxfh8j7m7ipY-N_htsA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\" : \"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/chooseuser",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"chooseuser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find User by userName",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTNkYTZlZmJiMGUwYTJhNzE4OTg1YWMwOGI0YzgzNjA5ODAxMDY5ODQ5NjU0MWVkYWM1NTAzNzEyOGY0MWZmY2Y2ZmI5ZDliOTM4MDZiYTkiLCJpYXQiOjE2MjY2MjczOTkuNTAzMDM3LCJuYmYiOjE2MjY2MjczOTkuNTAzMTI1LCJleHAiOjE2NTgxNjMzOTkuNDA0OTMyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QlcUcZcB3QxBVPioRMbI2roHKlB_CuuJCXKf_Db-hHeARBrqB55uQS0jJNE-aQNWg9mgxbMaBrGmcGVVfQFPqsUQjW4ZoVBFpAPRlxmWtX_r0RnesSOR5pF5TNk02GonkGkDoxu8UXH6FCdwPqOUM1EKnP3WT_eCz1A3RDRyiemH-COYAj-IZ4SF5kzE2VbDmLRXmDamHTH0vzaVL0YAY5si8AZY1l6dy76Jt3qPZB-EvyTS0yuyBI3H-_QW7zfX88-ScWZY4_Tl5JODShjKcuSlXm6AuddfXD7Qqav2RoBIaE4xt9EAIgdpmhmFCeq7AwQI5KBxVK2roCy17Rw65hzXMYSLuUQDy-oNaau8lxvl_oOtKAWSEs8919CXiw7PaX9YYzmwuGHFOjZ-I4CdN-61_fM51XFle-Ma69yrVYuXegBA-izUbsSQoI3i8CXPVPdDi5UszhA9_tscemPkSgD-COKTv_-uDhMI7PQLV1B_N6H0RxDkww6G4c5gZgUUF-TCPJDeeh9WurHCbODIXcjYidfFDFtrFn3jbMai3M3iQIRbfrS0_LDNO4St8f_xlJKH3CNqnhp6_9n30s3nzRqff0hvpdOTXj0apYc9tE17asSpji5HqeINgIMRly-MZDjcYYfwlB8fBWtAYpJL3_ZvM3cVO-0qBuZb3jypnbw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"Maria\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/finduser",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"finduser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Select User by userName",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODk0ZDhmNmE1OTc5ZWY0YzM1MGMwYjI0NTM2MmU1YWJjOGQ0MjAwYzY1Y2Q5Yzc0NDcwODFhYTEyMjJjOTVjM2NjYWNkZDQyNDUwMDQ1NDUiLCJpYXQiOjE2MjY0MzIwNjIuMDIyODMzLCJuYmYiOjE2MjY0MzIwNjIuMDIyODM3LCJleHAiOjE2NTc5NjgwNjEuOTk5MDkyLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.phPIhOEDztN5rSQ4Mo4KTnczDTK9VNHCplTtnUEvQcFQKzuJolUl-lsawEr8sBEoxAJKjL55vKwlFXDLC2Iu9pQdaB_wbuQzs_T8-Uw8YaGdA1Zjp-pvkDrnV7edXYa2GjhNzS0RSmxX_Y43r7JkVUNlfGjubrUM6GQcJuP2A-6t84Y7RKYwhptkiyr8cfxzFmmdoKk6_Rb18jcNVW8km4dVg_siInLUNxVa9dnjyAl4cVrDUegIyrHz2okVlqXYS5EpNYE-r5wqzfq1zdvawa2nmbYCFdjOL_WBbv_oB_n2uLeLWjac4SxwpbzXpCKuSqX8omSHJzTY_ukfBL-KgzK3kKY5ZoL5v7x50F9eu8PLJ20m7UUhYyu1hsRXDkq8XAzim-S1J7uV0ctnsnP5lijAkJOMEWcb6U3NiQYKvgAE9QMp8wpWNlhVJ4oK7weQs0Wx_f3oGIUSiEi1-u2FuYdB1kuH_dbIn_GzFcNhhHzFYMTptD1jCl4j3mlrokPWZSahQMFkU3x3XXXaszFUjJNqinbwP9sPAH3kwCJbqMMiSmu0tox7a92UkBcS_Er1EWFtXhmnHbGkFVNhuTTBkXO6T6v2Qrz0pPS_5uw2sDNxVqzaSI7RW_S-xa2rsw_26zDlHcCyT6pfnJseLMKzo7b1Dw1ySUBapLfbFP0xrxUeyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGFiNjk0ZDM5OTIwMWU2ZTdjNmY3ODVkNzFjNjNhYTcwYzBjZmQ0NmNjYWZjOWRkMDIzMTQ1MThjZGY2ZmIzZDJkYjUyOGZjMTIwZWQyMTAiLCJpYXQiOjE2MjY0MzMyNTkuNjY0MDc3LCJuYmYiOjE2MjY0MzMyNTkuNjY0MDgyLCJleHAiOjE2NTc5NjkyNTkuNjU1NTg3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Q4-xUCe80NlMFa87gUnAzz3tRWYiRuYxW5ZtxNSvvYusPOAMmnC_k6QqX-shw3ZtEuFQ1vpWKb_bVGHzklTa8qLHup75jUINw_SpUk4p6p76GPrJOkbBvtM2UBAtN_310TKJpPAIE2pDnefYuxRhHos3pR_JBtDMiEhYoeGZQMvU7LK0BYPDYOLN7LZsBlkV9q0Q8_ODNF7Z-Tc5j-AkHNTZYLuK-kClc3H-V1wesg4KkMokM8onH272zBL13s40SsL7NcVZgnq55Emku0tY_gx_OHE40CCQxUws72isiyVRJodRS_B_6WR0f1TW4rl9xEBBmtPsGgJQToe8uTY3baa_NGGXR-zt7XEj9gYuD3ISAK95IQbr9plfjq0vRTaExsyli3aauGtbfV2KNynRXvTFAjhXFtE0_PZTN-je3ze0wcnmIZw-FGJERQxYruQHQLaf19gC9xi0hI6t9xWzm_M0-WBP9xj2DztREf2W8Xg-xaqhVKkGMm4EvEHqUjtCQA7S_tTCel90LemIRUW0zUhoYYu7s35bNGusSwooGySzwt39zH9eIrX073agH4Scb8t7JEPeq5Bj34bccr8oAjy2cMFbi3XVE28Tx8xNcT5i2BuNcsgkWOE81q2zBx5HrhEqRGuB16oiJuXd5yo68ckq6bFkKUK0UP-QHxrkRC4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"God of war\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/selectuser",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"selectuser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTRkZTJhOWQ3ZWI5MDY3MzQyYjkzYTViOTM1YWQ1MDcxMTM3MTE3M2I1MDQ4MTQwZThiODNjZmJhYmJkOTc2NTM5Y2M3ZTkwY2JlMWI2NWEiLCJpYXQiOjE2MjY2MTk3NjcuMjEzMTk3LCJuYmYiOjE2MjY2MTk3NjcuMjEzMjM1LCJleHAiOjE2NTgxNTU3NjcuMTI1OTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.l2JVLXIQChVhpfqkcevSAzyFVsRA75tJq_oC8-9JTqSr8FEfAR7RmV_8bkXuTQunjj4Fq73TklMJh54QBXonxQFHmmd29lZoVxTx8m66gALG06k3GRrDta02Y7FsWicFGz8H6nvaEyXMtrMO0urSak8PMacIYAMT4leYFgBG9iIwaOI60ecR4PWYm7w2ukJAxVURNUOPiWjcF1ZFNPlhqCec5v9ZYNmZ6MSZaC0iwIqINY8p2RmYhdQB5ZGvCaHS7l8LmjZt6icCtlXzIGzMWqYdIrfNTJePAh6g7PHH1LO6HHK-eyfufH7vprNkxJjGvBBKTCHXrJS3ui2ta3Hf3zbSyBXyUxFcfXXPkLEHi1RsNm0iZhSgsikc54WNg0caXcYO_Gku478w2e7h5VCxRf25Ob06LwTUWHFM0DwrLOQqozl2rCbYiTNrDiBxVNCXeEXjuUdD9G-l-73sjD0a2CBrX9x70N_L7CKRcT9LNXiBl1ovEmOePO8kqX7kVpFwICdXlKWU-y3XKkaoYeKoIRuTwtqRAebrk-MlsVXM6MxuD2d_GXSm2xGv7h59FYH5z4ArD2J20njGOpPYa6PbdcunI1Am9XdzG4eysrU88bhy5Ar39IBIJJ2mFmw3bfeb2kcZVkcvmp9pBcjX3javXomAOxfh8j7m7ipY-N_htsA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gameTitle\" : \"God of war\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/allusers",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"allusers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find active users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTRkZTJhOWQ3ZWI5MDY3MzQyYjkzYTViOTM1YWQ1MDcxMTM3MTE3M2I1MDQ4MTQwZThiODNjZmJhYmJkOTc2NTM5Y2M3ZTkwY2JlMWI2NWEiLCJpYXQiOjE2MjY2MTk3NjcuMjEzMTk3LCJuYmYiOjE2MjY2MTk3NjcuMjEzMjM1LCJleHAiOjE2NTgxNTU3NjcuMTI1OTk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.l2JVLXIQChVhpfqkcevSAzyFVsRA75tJq_oC8-9JTqSr8FEfAR7RmV_8bkXuTQunjj4Fq73TklMJh54QBXonxQFHmmd29lZoVxTx8m66gALG06k3GRrDta02Y7FsWicFGz8H6nvaEyXMtrMO0urSak8PMacIYAMT4leYFgBG9iIwaOI60ecR4PWYm7w2ukJAxVURNUOPiWjcF1ZFNPlhqCec5v9ZYNmZ6MSZaC0iwIqINY8p2RmYhdQB5ZGvCaHS7l8LmjZt6icCtlXzIGzMWqYdIrfNTJePAh6g7PHH1LO6HHK-eyfufH7vprNkxJjGvBBKTCHXrJS3ui2ta3Hf3zbSyBXyUxFcfXXPkLEHi1RsNm0iZhSgsikc54WNg0caXcYO_Gku478w2e7h5VCxRf25Ob06LwTUWHFM0DwrLOQqozl2rCbYiTNrDiBxVNCXeEXjuUdD9G-l-73sjD0a2CBrX9x70N_L7CKRcT9LNXiBl1ovEmOePO8kqX7kVpFwICdXlKWU-y3XKkaoYeKoIRuTwtqRAebrk-MlsVXM6MxuD2d_GXSm2xGv7h59FYH5z4ArD2J20njGOpPYa6PbdcunI1Am9XdzG4eysrU88bhy5Ar39IBIJJ2mFmw3bfeb2kcZVkcvmp9pBcjX3javXomAOxfh8j7m7ipY-N_htsA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gameTitle\" : \"God of war\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/activeusers",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"activeusers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PartyController",
+					"item": [
+						{
+							"name": "Modify Party",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"party_id\" : \"4\",\r\n    \"partyName\" : \"el último mohicano\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/modifyparty",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"modifyparty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Party",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"party_id\" : \"5\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/deleteparty",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"deleteparty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Archive Party",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"party_id\" : \"4\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/archiveparty",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"archiveparty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Choose Party byId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"party_id\" : \"5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/chooseparty",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"chooseparty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Party by name",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partyName\" : \"Pang\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/findparty",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"findparty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Select Party by name",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partyName\" : \"Pangomia\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/selectparty",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"selectparty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all parties",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGI2YzRiMGViNTc1NzkxYTZiNjAwMzliMmZiZDRlODNkY2QyNzY0ZTY2NmFkYzJhM2M5ZmE5ZGY3YWZhMTg0MmQ5MGNlMmNjMjZjM2FiNzUiLCJpYXQiOjE2MjY2NTM4NjQuMzQ2NjQyLCJuYmYiOjE2MjY2NTM4NjQuMzQ2NjgyLCJleHAiOjE2NTgxODk4NjQuMjcyMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.xMs0HoyW-gK041csSlM39zZ8oOKAosln7QkLHkglYUGMzNSw-29skyfHXLquYTijP2AVSjhOo6sCQ3lEfyX8nMiNzYPxsmNpxAuRH1G2TjmPo8ml3xjrJJeRjJVrD9TsSE0q9Fq278snkVNlSRBQI3V7ysU81W9XKghwOdcD-9_AcMzJkQP7V4msPOP30lDruVJm3G0IRDLs6FGc-kGTCQwAd6W33XH9oyk7t2LaBKgf-K1fyiUOdJIB2tVWD-_9PscF8OAW1iYlbUnUSaNn5lzPpUW645SqUIA5gHIRcKkYRGyN6DD1Rc0WfOFgm7GM1iNPPU2XRYK--xrNY5SxY6YCiry2gMjWQbUOBqnxCHNI9cJtkHktE16WCpekDRI8q0-CZJyZu_4_ulV5UHWene8UORBFv_xNZm7qp-LQPZDNa1xemOH0PLAs4Z7l_ZRWheBzEqxb3jtZ5uAqipzI3yTyPmgP91mIYqwnrKdNOp8MABccxCoLQCcFfcdZCWBGO2MmqDiMPGlU5njzYnts_kiZuni8Vcak2RX7WUjWyuwaoaHzmvTnrdPGeDfirBtynhQCSon79Gmvq3nZT3qV57kI9gGP7AwLBTYsBDxAwe-RQNJnsO_arODP5XZU-a43rrhJ_XJQHbP-fYTj_saj0ZQAMDmu4msx9chm-V89kGo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/allparties",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"allparties"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find active parties",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTBhZDU1YWRmZjFlMWI1MDNmZTIxMjJkMzM2ZDY1YTEwNzQ5NjVjNDQyNmZhOGIyYTQ1ZDdjMzljZjJmNGI4YzMwNmM4OTk3MGNiZThlOTciLCJpYXQiOjE2MjY2NDE0MTYuMTA4ODg4LCJuYmYiOjE2MjY2NDE0MTYuMTA4OTMxLCJleHAiOjE2NTgxNzc0MTYuMDM0MjE4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.EhESE8NLGELF9FOGcLw-s-9dkn15MFyVGFbpl9Rwpz9Pg0zaQt-I6VSSkj3fP3zw3_zsorxLZo3VeoRboSuM3BEpkb5u9fdrQtGvRfsdDteyUQwpRjtqLfXR7YDlKNpqfFU0UDtVzpAqQsdjt-pJa7rFKQavtd6zCvXZOQghstzMTzYrYtSW7ytyPsBOssEq8kg1CaTU7VWhQ4jTAKquMqRP6lFxOMsuDKHRXJ2hEY6ANfa4h6FBXFEnsZMwEtBEaZ_8XbusjmuHgakcc8NvMjZaAYvxi6A0RTUX1tN-ddBKHAlgiTE0W9FNJrWpMwDN-GIsSxXY7jO2rBv4wMrrvhYIwiZ7mDfVLhnwitzrkHTu2Nv03DgriINnq80_n3iTzpRzZSdFAWASzRIhhGKAyFN11DkqepMnVR2h3l8dRWwjZZg3wxj1-B5n37S_Zxpczj6FMZnlrkzAwH5kZCSFysIsVJMLyjtVZuXDzhW1HGDBU56OXsSrr1DNV_AAN1x2IKyw4_sTWLqxE7DkiWu_5VAyQw2xBwiHzFVXLFfeh6K5VTqJXNViJRjmuP4618W9gRXvQ2Ssniph-6bbK3bIxXi6eQzV_Q9Cne9D1q4nm7AyA-e9RpEnurh4rN97xbbO0iP3sZgSjh2q6qwnSeTR4ZQJXsTPlvyqBt0cNCyH3do",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/activeparties",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"activeparties"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all Game parties",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGI2YzRiMGViNTc1NzkxYTZiNjAwMzliMmZiZDRlODNkY2QyNzY0ZTY2NmFkYzJhM2M5ZmE5ZGY3YWZhMTg0MmQ5MGNlMmNjMjZjM2FiNzUiLCJpYXQiOjE2MjY2NTM4NjQuMzQ2NjQyLCJuYmYiOjE2MjY2NTM4NjQuMzQ2NjgyLCJleHAiOjE2NTgxODk4NjQuMjcyMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.xMs0HoyW-gK041csSlM39zZ8oOKAosln7QkLHkglYUGMzNSw-29skyfHXLquYTijP2AVSjhOo6sCQ3lEfyX8nMiNzYPxsmNpxAuRH1G2TjmPo8ml3xjrJJeRjJVrD9TsSE0q9Fq278snkVNlSRBQI3V7ysU81W9XKghwOdcD-9_AcMzJkQP7V4msPOP30lDruVJm3G0IRDLs6FGc-kGTCQwAd6W33XH9oyk7t2LaBKgf-K1fyiUOdJIB2tVWD-_9PscF8OAW1iYlbUnUSaNn5lzPpUW645SqUIA5gHIRcKkYRGyN6DD1Rc0WfOFgm7GM1iNPPU2XRYK--xrNY5SxY6YCiry2gMjWQbUOBqnxCHNI9cJtkHktE16WCpekDRI8q0-CZJyZu_4_ulV5UHWene8UORBFv_xNZm7qp-LQPZDNa1xemOH0PLAs4Z7l_ZRWheBzEqxb3jtZ5uAqipzI3yTyPmgP91mIYqwnrKdNOp8MABccxCoLQCcFfcdZCWBGO2MmqDiMPGlU5njzYnts_kiZuni8Vcak2RX7WUjWyuwaoaHzmvTnrdPGeDfirBtynhQCSon79Gmvq3nZT3qV57kI9gGP7AwLBTYsBDxAwe-RQNJnsO_arODP5XZU-a43rrhJ_XJQHbP-fYTj_saj0ZQAMDmu4msx9chm-V89kGo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"game_id\" : \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/gameparties",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"gameparties"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Party",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTM0MjMwNDMwMGNjYTZmNzM2ZWZjN2VhOTdkNGUzNWU4MWEzZWU1ZWQxNTUzZGM3NWQ5NjMyMDM2ZjdlZmQzYWZiZjk0MzU1NGIxOTc4ZTMiLCJpYXQiOjE2MjY2NzQ1MjUuMTU0MTEyLCJuYmYiOjE2MjY2NzQ1MjUuMTU0MTE1LCJleHAiOjE2NTgyMTA1MjUuMTQ3Nzg0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.fmR7zbWrbkEQUWz8vIsDCOZiMwfxuH6BOi5WT_3WMGCx8WqtozmFkNiNYatPg9innnO3ACdL2dEad7RCEzX_5j3cksSJ9NlyfSqUmwmYw6KeGu806GfTi-W1PvC5CzdGe0W36dB4Q17LbbxyNkp2xDAeKhYslwgKdbBZ6mcQLzVKIwiFjHexgaKeKSel3TEU1HLnLXqYWybSgVfP7IgCuNbqe3hLMo8HPqXBQbEpnCuOtTF2QLkc8URNN7xwAU_bn76RBV3rwbyU8inz9p7Xa5R3O7pbK0F9R8chRKfLTLdyTitQ4Db8LJuUALCIrx8hYJiCYYfSgB_QdN1FlwNyL6WYXQTmA30zZWJiGb6RQ1dAhsTHpUzPRQcV2uQAvZectGKIsPdViP1Q_RBE3-y56QRa6bxLTwHnab7o7Ae9DHPheBGACyIl5OEFhAElmujtkY8U6RsW2hVujHcLarMKCIrN4SQ-A1C_14wazT9VWJwMSVGHOIdDf3l0ex303ELh6mzMy_0yDXOQiWFXo040fmE4IHWtkHMACCuluFa2gkMqtUNSPA1p_e30yALi7JtXeJ6gmpzoeDZHUoDtpvy5sGJdf3ZV--d7ivwxJ-jJx4cwXxYABRXCF8gY7kbSavKp48tmXeuDEOSP1os-o0k-Nf0J9ADQG0RxVSQNYOXSWJw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"partyName\" : \"Lords of the videogames\",\r\n    \"game_id\" : \"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/createparty",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"createparty"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SubscriptionController",
+					"item": [
+						{
+							"name": "Delete Subscription",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiY2ZkNjg2Yjc5ZTJhODI5NjRmMDI5ZDBiMGNjNWY5YzYzOWYwMzFmOTFlODFhMTA5NjQyMzIxMTI2ZDQyMWQ4N2M0ODljNDYwNzY5YjUwMzQiLCJpYXQiOjE2MjY2NDU5MzEuNTAxNjI3LCJuYmYiOjE2MjY2NDU5MzEuNTAxNjY5LCJleHAiOjE2NTgxODE5MzEuNDI2ODg3LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.zcNEVhtK3M0BcJS1Lh2O_30O74_ceYu81GZPmW5bPB2-lK_m0qf6A0m5aPqTUN3iU_D6PgTnt6PLTc-xGEcIZQMgg-TdKOkyxBn9gJT6MnTAlOPWefFEQOdU5iAQwQheN2eRId7R15AQm1uN6uDv9JC2Ypp9HoV653WT8SuwNc1zsmJicFTEImCSIYsOTPYqLLM64jvBS6x5gOgQbFjQ2KX-8TsUVrN1pBsEFidSZAA9sPpsdp6oIIMIVS0wIEGmkuIWkJxwC1HSk3WiPQzxK8QIxvpz36tKwPt-kt7MPI5PTtjxMmkulWfvNdfzm4tlNZ8NrffKsllzdcm4vJXvPttwCFQuuhTNuDyUIz-K3t2ejuaA3DmIJeHyLhRRbV-jB0SMRmxVA1YK2R8h2skrRLclf9fWVTi288LIo4ivdGf3lC_ZqcO9pXVlnjB8xiJZdA2KkCXYOCWIChzfTJZgogH6SDq-qLI3Trj1WQjcneLYDp_M9UPkWyEFE3NBa7Zbl2XuE6hTOyqTwguWrCpa8JJM844HrQcfFfKJnG1e-fjx1s44NrpLgHX5G6EayP8iaYfhECBRkLcHz3mIWDAcslKa3bc-AR31fsXb4B62WaIi6N5V64fSNit1tqpEolZRPwHfB_ar40OPpUYW75mP7kLu0Goe3WANu9ewbsgwdCI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\" : \"3\",\r\n    \"sub_id\" : \"6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/deletesubs",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"deletesubs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all user subscriptions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTQ5ZWIxOWEyMzE5NjYwYjk4YTg0Y2VhZDQyNjBjOWE2MGEzYjQyMDAyNGMzYjJlOWMzYWRkYzUxYTg4YWUyN2IzMmZlMjZmMDU4Y2E0NWIiLCJpYXQiOjE2MjY2NDc5NjguMTc1ODIsIm5iZiI6MTYyNjY0Nzk2OC4xNzU4NjcsImV4cCI6MTY1ODE4Mzk2OC4wOTczOSwic3ViIjoiMSIsInNjb3BlcyI6W119.HPev0X8W8rmytfbZmvvHOEfZUO3cUMI5oMGh2M0XCl9AZiZHmPCdrE7sHQwMicfClZXWBy8URvxNk4lPg7XAv78ydfsb89F1xKrYnmjT1cxcGsoZfiYwfofu1jnGAjnYkmzsweNtlZ2gdRNJoNa8WcTwy4zRr6pkTDbKud3Tgs4Q-dmmNwAfjLdjWddLgIocp-KzB1hTzJup1Ykto8COgEQC1g5pE4xJG_qkc5JGffEppNlTl68xqptxzYRYizgXaL9SIfoFtCDirGf6wnx7tOkrTLlWYyBA0CqrUvbENeotphsNKFQOROugKjA7UFATKAfPAaqhL-qcwU9a2w9D9vk9B88rTy0dhqhW0JZE9zxwYNLOlHzPVAxnBUBT_GpPPDCj29P3o1y2gR6erEgYd4LgkWNIOdvCuIwVnRVJZYBT6dUkyaWIkvzuibqLhb_T6XYCOwOW58NjCqdSBYvKEoyPO2H7NazCWG2NKTlAtJUka0EGaH3eBdwDifZmbCzO3WI_RVN7s5lK1eNBtlqJ8pPrD29zV3Kf9oyfT0-HA0ymOkTXOaLTPPREeB0WzWW_vrbK_dQK4fzTuRPvuy0heutDOE1WmuvrY4kKQt13ksVNb2zp5JfbPcuDI2ZPPnYDUCbPxnri67D5XfYABhjuM3OeHoqmPC8p5Q0hz7aHMe0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/usersubs",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"usersubs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all subscriptions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGI2YzRiMGViNTc1NzkxYTZiNjAwMzliMmZiZDRlODNkY2QyNzY0ZTY2NmFkYzJhM2M5ZmE5ZGY3YWZhMTg0MmQ5MGNlMmNjMjZjM2FiNzUiLCJpYXQiOjE2MjY2NTM4NjQuMzQ2NjQyLCJuYmYiOjE2MjY2NTM4NjQuMzQ2NjgyLCJleHAiOjE2NTgxODk4NjQuMjcyMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.xMs0HoyW-gK041csSlM39zZ8oOKAosln7QkLHkglYUGMzNSw-29skyfHXLquYTijP2AVSjhOo6sCQ3lEfyX8nMiNzYPxsmNpxAuRH1G2TjmPo8ml3xjrJJeRjJVrD9TsSE0q9Fq278snkVNlSRBQI3V7ysU81W9XKghwOdcD-9_AcMzJkQP7V4msPOP30lDruVJm3G0IRDLs6FGc-kGTCQwAd6W33XH9oyk7t2LaBKgf-K1fyiUOdJIB2tVWD-_9PscF8OAW1iYlbUnUSaNn5lzPpUW645SqUIA5gHIRcKkYRGyN6DD1Rc0WfOFgm7GM1iNPPU2XRYK--xrNY5SxY6YCiry2gMjWQbUOBqnxCHNI9cJtkHktE16WCpekDRI8q0-CZJyZu_4_ulV5UHWene8UORBFv_xNZm7qp-LQPZDNa1xemOH0PLAs4Z7l_ZRWheBzEqxb3jtZ5uAqipzI3yTyPmgP91mIYqwnrKdNOp8MABccxCoLQCcFfcdZCWBGO2MmqDiMPGlU5njzYnts_kiZuni8Vcak2RX7WUjWyuwaoaHzmvTnrdPGeDfirBtynhQCSon79Gmvq3nZT3qV57kI9gGP7AwLBTYsBDxAwe-RQNJnsO_arODP5XZU-a43rrhJ_XJQHbP-fYTj_saj0ZQAMDmu4msx9chm-V89kGo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/allsubs",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"allsubs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Subscription",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTM0MjMwNDMwMGNjYTZmNzM2ZWZjN2VhOTdkNGUzNWU4MWEzZWU1ZWQxNTUzZGM3NWQ5NjMyMDM2ZjdlZmQzYWZiZjk0MzU1NGIxOTc4ZTMiLCJpYXQiOjE2MjY2NzQ1MjUuMTU0MTEyLCJuYmYiOjE2MjY2NzQ1MjUuMTU0MTE1LCJleHAiOjE2NTgyMTA1MjUuMTQ3Nzg0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.fmR7zbWrbkEQUWz8vIsDCOZiMwfxuH6BOi5WT_3WMGCx8WqtozmFkNiNYatPg9innnO3ACdL2dEad7RCEzX_5j3cksSJ9NlyfSqUmwmYw6KeGu806GfTi-W1PvC5CzdGe0W36dB4Q17LbbxyNkp2xDAeKhYslwgKdbBZ6mcQLzVKIwiFjHexgaKeKSel3TEU1HLnLXqYWybSgVfP7IgCuNbqe3hLMo8HPqXBQbEpnCuOtTF2QLkc8URNN7xwAU_bn76RBV3rwbyU8inz9p7Xa5R3O7pbK0F9R8chRKfLTLdyTitQ4Db8LJuUALCIrx8hYJiCYYfSgB_QdN1FlwNyL6WYXQTmA30zZWJiGb6RQ1dAhsTHpUzPRQcV2uQAvZectGKIsPdViP1Q_RBE3-y56QRa6bxLTwHnab7o7Ae9DHPheBGACyIl5OEFhAElmujtkY8U6RsW2hVujHcLarMKCIrN4SQ-A1C_14wazT9VWJwMSVGHOIdDf3l0ex303ELh6mzMy_0yDXOQiWFXo040fmE4IHWtkHMACCuluFa2gkMqtUNSPA1p_e30yALi7JtXeJ6gmpzoeDZHUoDtpvy5sGJdf3ZV--d7ivwxJ-jJx4cwXxYABRXCF8gY7kbSavKp48tmXeuDEOSP1os-o0k-Nf0J9ADQG0RxVSQNYOXSWJw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"party_id\" : \"2\",\r\n    \"user_id\" : \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/createsubs",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"createsubs"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CommentController",
+					"item": [
+						{
+							"name": "Delete Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGI2YzRiMGViNTc1NzkxYTZiNjAwMzliMmZiZDRlODNkY2QyNzY0ZTY2NmFkYzJhM2M5ZmE5ZGY3YWZhMTg0MmQ5MGNlMmNjMjZjM2FiNzUiLCJpYXQiOjE2MjY2NTM4NjQuMzQ2NjQyLCJuYmYiOjE2MjY2NTM4NjQuMzQ2NjgyLCJleHAiOjE2NTgxODk4NjQuMjcyMjYxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.xMs0HoyW-gK041csSlM39zZ8oOKAosln7QkLHkglYUGMzNSw-29skyfHXLquYTijP2AVSjhOo6sCQ3lEfyX8nMiNzYPxsmNpxAuRH1G2TjmPo8ml3xjrJJeRjJVrD9TsSE0q9Fq278snkVNlSRBQI3V7ysU81W9XKghwOdcD-9_AcMzJkQP7V4msPOP30lDruVJm3G0IRDLs6FGc-kGTCQwAd6W33XH9oyk7t2LaBKgf-K1fyiUOdJIB2tVWD-_9PscF8OAW1iYlbUnUSaNn5lzPpUW645SqUIA5gHIRcKkYRGyN6DD1Rc0WfOFgm7GM1iNPPU2XRYK--xrNY5SxY6YCiry2gMjWQbUOBqnxCHNI9cJtkHktE16WCpekDRI8q0-CZJyZu_4_ulV5UHWene8UORBFv_xNZm7qp-LQPZDNa1xemOH0PLAs4Z7l_ZRWheBzEqxb3jtZ5uAqipzI3yTyPmgP91mIYqwnrKdNOp8MABccxCoLQCcFfcdZCWBGO2MmqDiMPGlU5njzYnts_kiZuni8Vcak2RX7WUjWyuwaoaHzmvTnrdPGeDfirBtynhQCSon79Gmvq3nZT3qV57kI9gGP7AwLBTYsBDxAwe-RQNJnsO_arODP5XZU-a43rrhJ_XJQHbP-fYTj_saj0ZQAMDmu4msx9chm-V89kGo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\" : \"1\",\r\n    \"party_id\" : \"1\",\r\n    \"comment_id\" : \"4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/deletecomment",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"deletecomment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all party comments",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDhkYjllMjgxNTc2OTMyYzE1YzMyYTI1ZGRmYTU2ZWU3NDViYjZkYmYzY2JjZmFkMWUxZjI3Nzk1MzcxZWI3MjFlODdlZWZiZDJkZWJlNDQiLCJpYXQiOjE2MjY2NTYzOTEuNjg3ODEzLCJuYmYiOjE2MjY2NTYzOTEuNjg3OTM2LCJleHAiOjE2NTgxOTIzOTEuNjAxNzM1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.w5KXeLQEq9xIUe8k2aq6ER0tcjwLUFWtHgRWNPs29LCI8gA2Aajl9K9_Aj2wbj0SuVpHxeoO45ebKGe2HLhhcyGulcl6pG0Mn5nO1_xKiPz2Dbw5MyEtDRGf36QhWEwo0uYKP6GBm-tPvz67YaHo5Kj5xgypP_xzAlgSKpUTHgmgChwt9af-0SOP5_Zgx3wzZYAtpRBf6fiE9POaxbX5e_lB15ObGNgDP3rOsvscnlNmbTVIcmW5mVFi6S_7E7mVhjyQlEZwVzWlwsTcF73TMR6k3on2P6r9QaHeIa6ey6GMVYOKXgSDSj_iAsp1jLjtJpGCaHSg2SSro_xC6E8DXhlesak2fzJwkzcNwxVzHWzHq3LDVHA-ZCY3SiQdAoo8evgx9pjDmttwnVTahlH9hMjulEr0xGKjvqXQAvDpnXEZxMV5LkcDolO4XdFQ4zb25Lr8gm_w8uxM5VuYV_XYTeAqwQxUwxNOhqvZtCanbKMW-qwsw3WvA15reOQ692TcXHaks79NZXuJPQctI8iGsw5TJA78acJs4NYoXrdNFUrE2y7gAHF_iTdP8vBFNbhJeMNQoo1s-eAh9ENDp3ZlhPu8Qcsd1I8gar1meksr8V64LrqRVSnUcxNmBi6AEkMHXRvxa7fBtdEN8ULJZxKXL4glRiRYiiuGgnpAMoHFsF4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"party_id\" : \"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/partycomments",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"partycomments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find all coments",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDhkYjllMjgxNTc2OTMyYzE1YzMyYTI1ZGRmYTU2ZWU3NDViYjZkYmYzY2JjZmFkMWUxZjI3Nzk1MzcxZWI3MjFlODdlZWZiZDJkZWJlNDQiLCJpYXQiOjE2MjY2NTYzOTEuNjg3ODEzLCJuYmYiOjE2MjY2NTYzOTEuNjg3OTM2LCJleHAiOjE2NTgxOTIzOTEuNjAxNzM1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.w5KXeLQEq9xIUe8k2aq6ER0tcjwLUFWtHgRWNPs29LCI8gA2Aajl9K9_Aj2wbj0SuVpHxeoO45ebKGe2HLhhcyGulcl6pG0Mn5nO1_xKiPz2Dbw5MyEtDRGf36QhWEwo0uYKP6GBm-tPvz67YaHo5Kj5xgypP_xzAlgSKpUTHgmgChwt9af-0SOP5_Zgx3wzZYAtpRBf6fiE9POaxbX5e_lB15ObGNgDP3rOsvscnlNmbTVIcmW5mVFi6S_7E7mVhjyQlEZwVzWlwsTcF73TMR6k3on2P6r9QaHeIa6ey6GMVYOKXgSDSj_iAsp1jLjtJpGCaHSg2SSro_xC6E8DXhlesak2fzJwkzcNwxVzHWzHq3LDVHA-ZCY3SiQdAoo8evgx9pjDmttwnVTahlH9hMjulEr0xGKjvqXQAvDpnXEZxMV5LkcDolO4XdFQ4zb25Lr8gm_w8uxM5VuYV_XYTeAqwQxUwxNOhqvZtCanbKMW-qwsw3WvA15reOQ692TcXHaks79NZXuJPQctI8iGsw5TJA78acJs4NYoXrdNFUrE2y7gAHF_iTdP8vBFNbhJeMNQoo1s-eAh9ENDp3ZlhPu8Qcsd1I8gar1meksr8V64LrqRVSnUcxNmBi6AEkMHXRvxa7fBtdEN8ULJZxKXL4glRiRYiiuGgnpAMoHFsF4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/allcomments",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"allcomments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTM0MjMwNDMwMGNjYTZmNzM2ZWZjN2VhOTdkNGUzNWU4MWEzZWU1ZWQxNTUzZGM3NWQ5NjMyMDM2ZjdlZmQzYWZiZjk0MzU1NGIxOTc4ZTMiLCJpYXQiOjE2MjY2NzQ1MjUuMTU0MTEyLCJuYmYiOjE2MjY2NzQ1MjUuMTU0MTE1LCJleHAiOjE2NTgyMTA1MjUuMTQ3Nzg0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.fmR7zbWrbkEQUWz8vIsDCOZiMwfxuH6BOi5WT_3WMGCx8WqtozmFkNiNYatPg9innnO3ACdL2dEad7RCEzX_5j3cksSJ9NlyfSqUmwmYw6KeGu806GfTi-W1PvC5CzdGe0W36dB4Q17LbbxyNkp2xDAeKhYslwgKdbBZ6mcQLzVKIwiFjHexgaKeKSel3TEU1HLnLXqYWybSgVfP7IgCuNbqe3hLMo8HPqXBQbEpnCuOtTF2QLkc8URNN7xwAU_bn76RBV3rwbyU8inz9p7Xa5R3O7pbK0F9R8chRKfLTLdyTitQ4Db8LJuUALCIrx8hYJiCYYfSgB_QdN1FlwNyL6WYXQTmA30zZWJiGb6RQ1dAhsTHpUzPRQcV2uQAvZectGKIsPdViP1Q_RBE3-y56QRa6bxLTwHnab7o7Ae9DHPheBGACyIl5OEFhAElmujtkY8U6RsW2hVujHcLarMKCIrN4SQ-A1C_14wazT9VWJwMSVGHOIdDf3l0ex303ELh6mzMy_0yDXOQiWFXo040fmE4IHWtkHMACCuluFa2gkMqtUNSPA1p_e30yALi7JtXeJ6gmpzoeDZHUoDtpvy5sGJdf3ZV--d7ivwxJ-jJx4cwXxYABRXCF8gY7kbSavKp48tmXeuDEOSP1os-o0k-Nf0J9ADQG0RxVSQNYOXSWJw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\" : \"Esto lo escribe Fede en la party\",\r\n    \"party_id\" : \"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/createcomment",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"createcomment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDhkYjllMjgxNTc2OTMyYzE1YzMyYTI1ZGRmYTU2ZWU3NDViYjZkYmYzY2JjZmFkMWUxZjI3Nzk1MzcxZWI3MjFlODdlZWZiZDJkZWJlNDQiLCJpYXQiOjE2MjY2NTYzOTEuNjg3ODEzLCJuYmYiOjE2MjY2NTYzOTEuNjg3OTM2LCJleHAiOjE2NTgxOTIzOTEuNjAxNzM1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.w5KXeLQEq9xIUe8k2aq6ER0tcjwLUFWtHgRWNPs29LCI8gA2Aajl9K9_Aj2wbj0SuVpHxeoO45ebKGe2HLhhcyGulcl6pG0Mn5nO1_xKiPz2Dbw5MyEtDRGf36QhWEwo0uYKP6GBm-tPvz67YaHo5Kj5xgypP_xzAlgSKpUTHgmgChwt9af-0SOP5_Zgx3wzZYAtpRBf6fiE9POaxbX5e_lB15ObGNgDP3rOsvscnlNmbTVIcmW5mVFi6S_7E7mVhjyQlEZwVzWlwsTcF73TMR6k3on2P6r9QaHeIa6ey6GMVYOKXgSDSj_iAsp1jLjtJpGCaHSg2SSro_xC6E8DXhlesak2fzJwkzcNwxVzHWzHq3LDVHA-ZCY3SiQdAoo8evgx9pjDmttwnVTahlH9hMjulEr0xGKjvqXQAvDpnXEZxMV5LkcDolO4XdFQ4zb25Lr8gm_w8uxM5VuYV_XYTeAqwQxUwxNOhqvZtCanbKMW-qwsw3WvA15reOQ692TcXHaks79NZXuJPQctI8iGsw5TJA78acJs4NYoXrdNFUrE2y7gAHF_iTdP8vBFNbhJeMNQoo1s-eAh9ENDp3ZlhPu8Qcsd1I8gar1meksr8V64LrqRVSnUcxNmBi6AEkMHXRvxa7fBtdEN8ULJZxKXL4glRiRYiiuGgnpAMoHFsF4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"message\" : \"blablablabla\",\r\n    \"party_id\" : \"1\",\r\n    \"user_id\" : \"2\",\r\n    \"comment_id\" : \"8\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://passportlaravelapp.herokuapp.com/api/modifycomment",
+									"protocol": "https",
+									"host": [
+										"passportlaravelapp",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"modifycomment"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
